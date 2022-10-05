@@ -22,7 +22,7 @@ const MobileDevelopers = () => {
       <div className={classnames(styles.blockWrapper, styles.banner)}>
         {/* <Image src='/developer_home_banner_2.svg' /> */}
 
-        <div className={styles.title}>帮中国程序员获得全世界的远程工作机会</div>
+        <div className={styles.title}>帮中国程序员3获得全世界的远程工作机会</div>
         <div className={styles.body}>
           我们已经进入到一个远程优先的世界，全球各地的公司都在世界各地招聘最优秀的程序员。但目前大部分的中国程序员还很难接触到这些机会，我们希望填补这个空白，让中国的优秀程序员告别内卷，获得全世界最优秀公司的远程工作机会。
         </div>
