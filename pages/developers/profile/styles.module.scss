@@ -1,0 +1,154 @@
+.block {
+  padding: 20px 0;
+  position: relative;
+  &:first-child {
+    margin-top: 50px;
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(31, 31, 31, 0.18);
+  }
+
+  .edit {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: rgba(31, 31, 31, 0.76);
+  }
+}
+
+.basic {
+  .avatar {
+    border-radius: 8px;
+  }
+
+  .title {
+    margin-top: 20px;
+  }
+
+  .intro {
+    margin-top: 20px;
+    @include fs14;
+    color: rgba(31, 31, 31, 0.76);
+  }
+
+  .detail {
+    margin-top: 20px;
+    @include fs14;
+    & > div {
+      display: inline-block;
+      color: #2656c9;
+      margin-right: 16px;
+
+      :global {
+        .anticon {
+          margin-right: 5px;
+        }
+      }
+
+      &:first-child {
+        padding-right: 16px;
+        margin-right: 16px;
+        border-right: 1px solid rgba(31, 31, 31, 0.18);
+        color: rgba(31, 31, 31, 0.76);
+      }
+    }
+  }
+}
+
+.englishSkills {
+  .head {
+    @include fs16b;
+    margin-top: 20px;
+  }
+
+  .desc {
+    margin-top: 20px;
+    @include fs14;
+  }
+}
+
+.availability {
+  .contentWrapper {
+    margin-top: 20px;
+  }
+}
+
+.technicalSkills {
+  .smallTitle {
+    @include fs14b;
+    margin-top: 20px;
+  }
+
+  .liWrapper {
+    margin-top: 8px;
+  }
+}
+
+.experience,
+.project {
+  .liWrapper {
+    margin-top: 20px;
+  }
+
+  .expBlock {
+    margin-top: 20px;
+  }
+
+  .expTitle {
+    @include fs20b;
+  }
+
+  .expPanel {
+    margin-top: 20px;
+  }
+
+  .expPanelTitle {
+    @include fs16b;
+  }
+
+  .text {
+    @include fs14;
+    margin-top: 8px;
+
+    &.subTitle {
+      @include fs16b;
+    }
+
+    &.indent {
+      padding-left: 20px;
+    }
+  }
+}
+
+.web3 {
+  .liWrapper {
+    margin-top: 20px;
+  }
+}
+
+.salary {
+  .salaryTitle {
+    margin-top: 20px;
+  }
+}
+
+.liItem {
+  position: relative;
+  padding-left: 20px;
+  @include fs14;
+  line-height: 25px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    background-color: rgba(31, 31, 31);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+}
+.title {
+  @include fs24b;
+}

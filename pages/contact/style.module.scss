@@ -1,0 +1,59 @@
+.banner {
+  padding-top: 50px;
+  padding-bottom: 180px;
+  background-color: rgba(0, 122, 255, 0.12);
+
+  .title {
+    @include fs36b;
+  }
+
+  .body {
+    @include fs16;
+    margin-top: 24px;
+  }
+
+  .content {
+    @include fs14;
+    margin-top: 24px;
+  }
+}
+
+.bannerButton {
+  width: 168px;
+  height: 64px;
+  border-radius: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.blockTitle {
+  @include fs24b;
+}
+
+.blockContent {
+  @include fs16;
+  margin-top: 24px;
+}
+
+.blockWrapper {
+  &.gray {
+    background-color: rgba(245, 245, 245, 0.72);
+  }
+}
+
+.block {
+  width: 960px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 24px;
+
+  > div {
+    flex: 1;
+  }
+
+  .right {
+    margin-left: 55px;
+  }
+}

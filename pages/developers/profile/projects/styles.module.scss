@@ -1,0 +1,78 @@
+.header {
+  @include fs24b;
+  margin-top: 30px;
+}
+
+.flexContainer {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  .flexItem {
+    margin-right: 20px;
+    flex: 1;
+    .title {
+      @include fs20b;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.questionContainer {
+  margin-bottom: 40px;
+
+  .title {
+    @include fs20b;
+  }
+
+  .expPanel {
+    background-color: #f6f8fc;
+    padding: 16px;
+    border-radius: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    .expForm {
+      flex: 1;
+    }
+
+    .expDelete {
+      flex: none;
+      margin-left: 16px;
+      color: rgba(49, 53, 56, 0.6);
+      cursor: pointer;
+    }
+
+    .dateScopeWrapper {
+      display: flex;
+      .inputWrapper {
+        flex: 1;
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .inputWrapper {
+      margin-bottom: 10px;
+    }
+    .label {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.addBtn {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 8px;
+  padding: 16px 24px;
+  background-color: #f6f8fc;
+  border-radius: 20px;
+}
+
+.submitBtn {
+  @include blackBtn;
+  &.disabled {
+    @include blackBtnDisabled;
+  }
+}

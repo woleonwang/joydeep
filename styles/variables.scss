@@ -1,0 +1,135 @@
+@mixin fs12 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin fs14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin fs14b {
+  @include fs14;
+  font-weight: bold;
+}
+
+@mixin fs16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin fs16b {
+  @include fs16;
+  font-weight: bold;
+}
+
+@mixin fs18 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+@mixin fs20 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@mixin fs20b {
+  @include fs20;
+  font-weight: bold;
+}
+
+@mixin fs24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin fs24b {
+  @include fs24;
+  font-weight: bold;
+}
+
+@mixin fs28 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+@mixin fs28b {
+  @include fs28;
+  font-weight: bold;
+}
+
+@mixin fs32 {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+@mixin fs32b {
+  @include fs32;
+  font-weight: bold;
+}
+
+@mixin fs36b {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+}
+
+@mixin fs40b {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+}
+
+@mixin fs50b {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: bold;
+}
+
+@mixin blackBtn {
+  // container
+  background-color: rgba(31, 31, 31, 1);
+  padding: 12px 32px;
+  border-radius: 28px;
+  cursor: pointer;
+  // text
+  color: white;
+  display: inline-block;
+  @include fs16b;
+}
+
+@mixin blackBtnDisabled {
+  background-color: rgba(31, 31, 31, 0.18);
+  cursor: not-allowed;
+}
+
+@mixin blackGhostBtn {
+  // container
+  border: 1px solid rgba(31, 31, 31, 1);
+  padding: 12px 32px;
+  border-radius: 28px;
+  cursor: pointer;
+  // text
+  color: rgba(31, 31, 31, 1);
+  display: inline-block;
+  @include fs16b;
+}
+
+@mixin blackGhostBtnDisabled {
+  border: 1px solid rgba(31, 31, 31, 0.18);
+  color: rgba(31, 31, 31, 0.18);
+  cursor: not-allowed;
+}
+
+@mixin whiteBtn {
+  // container
+  padding: 12px 32px;
+  border-radius: 30px;
+  cursor: pointer;
+  // text
+  color: white;
+  border: 2px solid white;
+  @include fs16b;
+}
+
+$main-width: 1440px;

@@ -1,0 +1,43 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.inner {
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.linkItem {
+  @include fs14;
+  margin: 0 12px;
+}
+
+.splitter {
+  height: 20px;
+  border-left: 1px solid rgba(31, 31, 31, 0.18);
+  margin-left: 12px;
+  margin-right: 24px;
+}
+
+.blackBtn {
+  @include blackBtn;
+  margin-left: 24px;
+}
+
+.whiteBtn {
+  display: inline-block;
+  @include blackGhostBtn;
+  margin-left: 24px;
+}

@@ -1,0 +1,15 @@
+.container {
+  margin-top: 72px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkItem {
+  @include fs14;
+  margin-bottom: 24px;
+}

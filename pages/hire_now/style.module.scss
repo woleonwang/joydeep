@@ -1,0 +1,73 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContent {
+  width: $main-width;
+  min-width: $main-width;
+  display: flex;
+  align-items: flex-start;
+  .left {
+    width: 624px;
+    flex: none;
+    position: relative;
+
+    .fakeLogo {
+      z-index: 1;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      width: 200px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .right {
+    flex: none;
+    width: 320px;
+    margin-left: 96px;
+    .title {
+      @include fs40b;
+    }
+
+    .subTitle {
+      margin: 32px 0;
+      @include fs16b;
+    }
+
+    .inputWrapper {
+      width: 400px;
+      margin-top: 16px;
+      box-shadow: 0px 2px 0px rgba(31, 31, 31, 0.32);
+    }
+
+    .blackBtn {
+      @include blackBtn;
+      margin-top: 32px;
+
+      &.disabled {
+        @include blackBtnDisabled;
+      }
+    }
+
+    .blackGhostBtn {
+      @include blackGhostBtn;
+      margin-right: 18px;
+
+      &.disabled {
+        @include blackGhostBtnDisabled;
+      }
+    }
+
+    .inputContainer {
+      margin-top: 16px;
+    }
+  }
+}

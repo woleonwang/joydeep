@@ -1,0 +1,196 @@
+.container {
+  position: relative;
+
+  .logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+}
+
+.innerContainer {
+  width: 700px;
+  margin: auto;
+  padding-top: 84px;
+}
+
+.block {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.18);
+
+  .title {
+    @include fs28b;
+  }
+
+  .liWrapper {
+    margin-top: 8px;
+  }
+
+  .liItem {
+    position: relative;
+    padding-left: 20px;
+    @include fs14;
+    line-height: 25px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      background-color: rgba(31, 31, 31);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.basic {
+  display: flex;
+
+  .left {
+    flex: none;
+  }
+
+  .right {
+    flex: 1;
+    margin-left: 32px;
+  }
+
+  .avatar {
+    border-radius: 8px;
+  }
+
+  .name {
+    @include fs24b;
+  }
+
+  .selfIntro {
+    margin-top: 12px;
+  }
+}
+
+.skills {
+  .smallTitle {
+    @include fs20b;
+    margin-top: 20px;
+  }
+
+  .skillsWrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .skillsHeader {
+    @include fs16b;
+  }
+
+  .skillsItem {
+    padding-right: 20px;
+  }
+
+  .skillsLi {
+    margin-top: 5px;
+  }
+}
+
+.coding {
+  .videoWrapper {
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+}
+
+.record {
+  .item {
+    position: relative;
+    padding-left: 20px;
+    @include fs16b;
+    line-height: 25px;
+    margin-top: 20px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      background-color: rgba(31, 31, 31);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.experience {
+  .liWrapper {
+    margin-top: 20px;
+  }
+
+  .expBlock {
+    margin-top: 40px;
+  }
+
+  .expTitle {
+    @include fs20b;
+  }
+
+  .expPanel {
+    margin-top: 20px;
+  }
+
+  .expPanelTitle {
+    @include fs16b;
+  }
+
+  .text {
+    @include fs14;
+    margin-top: 8px;
+
+    &.subTitle {
+      @include fs16b;
+    }
+
+    &.indent {
+      padding-left: 20px;
+    }
+  }
+}
+
+.reportContainer {
+  background-color: rgba(246, 248, 252, 1);
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 24px;
+  .sign {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .intro {
+    color: rgba(31, 31, 31, 0.36);
+  }
+
+  .name {
+    color: rgba(31, 31, 31, 0.76);
+  }
+}
+
+.pointWrap {
+  display: flex;
+  flex-wrap: wrap;
+  .point {
+    flex: 0 0 50%;
+    overflow: hidden;
+    margin-top: 20px;
+    padding-right: 20px;
+  }
+  .pointTitle {
+    @include fs16b;
+  }
+  .pointContent {
+    margin-top: 8px;
+  }
+}
+
+.formattedText {
+  white-space: pre-wrap;
+}

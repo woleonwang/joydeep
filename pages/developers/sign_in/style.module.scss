@@ -1,0 +1,78 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContent {
+  width: $main-width;
+  display: flex;
+  align-items: center;
+  .left {
+    width: 624px;
+    flex: none;
+    position: relative;
+
+    .fakeLogo {
+      position: absolute;
+      z-index: 1;
+      right: 30px;
+      top: 30px;
+      width: 200px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .right {
+    flex: 1;
+    margin-left: 96px;
+    .title {
+      @include fs40b;
+    }
+
+    .subTitle {
+      margin-top: 32px;
+      @include fs16;
+    }
+
+    .inputWrapper {
+      width: 400px;
+      margin-top: 16px;
+      box-shadow: 0px 2px 0px rgba(31, 31, 31, 0.32);
+    }
+
+    :global {
+      .ant-input {
+        padding: 0;
+        font-size: 50px;
+      }
+    }
+
+    .blackBtn {
+      @include blackBtn;
+      margin-top: 32px;
+
+      &.disabled {
+        @include blackBtnDisabled;
+      }
+    }
+
+    .blackGhostBtn {
+      @include blackGhostBtn;
+      margin-right: 18px;
+
+      &.disabled {
+        @include blackGhostBtnDisabled;
+      }
+    }
+
+    .inputContainer {
+      margin-top: 16px;
+    }
+  }
+}

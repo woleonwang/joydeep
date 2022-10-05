@@ -1,0 +1,36 @@
+.container {
+  width: 1440px;
+  margin: 72px auto;
+  text-align: center;
+}
+
+.inner {
+  background-color: #f6f8fc;
+  padding: 24px 72px 48px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 64px;
+  .logo {
+    text-align: center;
+  }
+  .footerContainer {
+    border-top: 1px solid rgba(31, 31, 31, 0.18);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+  }
+
+  .linkItem {
+    @include fs14;
+
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+  }
+}
+
+.footer {
+  margin-top: 44px;
+  padding-bottom: 64px;
+  color: rgba(31, 31, 31, 0.76);
+}

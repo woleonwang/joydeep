@@ -1,0 +1,7 @@
+.submitBtn {
+  @include blackBtn;
+  margin-top: 40px;
+  &.disabled {
+    @include blackBtnDisabled;
+  }
+}

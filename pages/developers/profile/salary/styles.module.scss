@@ -1,0 +1,39 @@
+.header {
+  @include fs24b;
+  margin-top: 30px;
+}
+
+.formContainer {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  @include fs20b;
+  margin-bottom: 20px;
+}
+
+.formItem {
+  display: inline-block;
+  padding-right: 25px;
+  width: 50%;
+
+  &.flex {
+    display: inline-flex;
+    align-items: center;
+
+    & > div {
+      flex: 1;
+    }
+
+    .line {
+      margin: 0 10px;
+      flex: none;
+    }
+  }
+}
+
+.submitBtn {
+  @include blackBtn;
+  margin-top: 40px;
+}

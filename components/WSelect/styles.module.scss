@@ -1,0 +1,80 @@
+.container {
+  .question {
+    @include fs20b;
+  }
+
+  .hint {
+    @include fs14;
+    margin-top: 16px;
+    color: rgba(31, 31, 31, 0.76);
+  }
+
+  .optionContainer {
+    margin-top: 16px;
+  }
+
+  .option {
+    background-color: #f6f8fc;
+    padding: 6px 24px;
+    border-radius: 20px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    &.selected {
+      border: 2px solid #2656c9;
+      padding: 4px 22px;
+
+      .circle {
+        border: 7px solid #2656c9;
+      }
+
+      .rect {
+        background-color: #2656c9;
+        text-align: center;
+        :global {
+          .anticon-check {
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(31, 31, 31, 0.18);
+    background-color: white;
+    flex: none;
+    margin-right: 24px;
+    cursor: pointer;
+  }
+
+  .rect {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(31, 31, 31, 0.18);
+    background-color: white;
+    border-radius: 4px;
+    flex: none;
+    margin-right: 24px;
+    cursor: pointer;
+  }
+
+  .text {
+    flex: 1;
+
+    .title {
+      @include fs16b;
+      padding-top: 8px;
+    }
+
+    .description {
+      @include fs14;
+      color: rgba(31, 31, 31, 0.76);
+      margin-top: 8px;
+    }
+  }
+}

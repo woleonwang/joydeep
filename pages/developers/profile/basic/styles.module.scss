@@ -1,0 +1,56 @@
+.header {
+  @include fs24b;
+  margin-top: 30px;
+}
+
+.formContainer {
+  display: flex;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.18);
+}
+
+.leftForm {
+  flex: 1;
+}
+
+.rightForm {
+  margin-left: 24px;
+  flex: 1;
+  position: relative;
+  padding-top: 172px;
+}
+
+.avatar {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.uploadBtn {
+  @include blackGhostBtn;
+  padding: 8px 20px;
+  @include fs14;
+  flex: none;
+}
+
+.attachmentContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+
+  .attachment {
+    margin-left: 10px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.submitBtn {
+  @include blackBtn;
+  margin-top: 40px;
+}

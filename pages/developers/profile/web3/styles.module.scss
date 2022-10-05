@@ -1,0 +1,19 @@
+.header {
+  @include fs24b;
+  margin-top: 30px;
+}
+
+.formContainer {
+  margin-top: 20px;
+}
+
+.questionContainer {
+  margin-bottom: 40px;
+}
+
+.submitBtn {
+  @include blackBtn;
+  &.disabled {
+    @include blackBtnDisabled;
+  }
+}

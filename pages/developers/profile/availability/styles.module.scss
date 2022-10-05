@@ -1,0 +1,34 @@
+.header {
+  @include fs24b;
+  margin-top: 30px;
+}
+
+.formContainer {
+  margin-top: 20px;
+}
+
+.questionContainer {
+  margin-bottom: 40px;
+
+  .questionTitle {
+    @include fs20b;
+  }
+
+  .answer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .unit {
+    @include fs16b;
+    margin-left: 10px;
+  }
+}
+
+.submitBtn {
+  @include blackBtn;
+  &.disabled {
+    @include blackBtnDisabled;
+  }
+}
