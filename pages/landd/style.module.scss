@@ -59,10 +59,10 @@
   .body {
     @include fs16;
     margin-top: 24px;
+    white-space: nowrap;
   }
 
   .right {
     margin-left: 55px;
   }
 }
-

@@ -5,7 +5,8 @@
  * @LastEditors: wmy
  * @Description: 功能描述
  */
-import { Button } from 'antd';
+import { Button, Dropdown, Menu, Space } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './style.module.scss';
@@ -13,21 +14,30 @@ import styles from './style.module.scss';
 const Header = () => {
   const links = [
     {
-      name: 'Search for a recruiter',
-      href: '/',
+      name: 'Recruitment Solutions',
+      children: [
+        {
+          name: 'Landd Recruiters',
+          href: '/for_recruiters',
+        },
+        {
+          name: 'Landd Partners',
+          href: '/for_parteners',
+        },
+        {
+          name: 'Landd Remote',
+          href: '/',
+        },
+      ],
     },
     {
-      name: 'For employers',
-      href: '/for_employers',
+      name: 'Start Hiring Now',
+      href: '/sign_up',
     },
     {
-      name: 'For recruiters',
-      href: '/for_recruiters',
+      name: 'About',
+      href: '/contact',
     },
-    // {
-    //   name: 'Contact',
-    //   href: '/contact',
-    // },
   ];
 
   return (
@@ -41,11 +51,37 @@ const Header = () => {
           </Link>
         </div>
         <div className={styles.headerContainer}>
-          {links.map((link) => (
-            <div key={link.href} className={styles.linkItem}>
-              <Link href={link.href}>{link.name}</Link>
-            </div>
-          ))}
+          {links.map((link) => {
+            if (link.href) {
+              return (
+                <div key={link.href} className={styles.linkItem}>
+                  <Link href={link.href}>{link.name}</Link>
+                </div>
+              );
+            } else if (link.children) {
+              return (
+                <div key={link.href} className={styles.linkItem}>
+                  <Dropdown
+                    overlay={
+                      <Menu
+                        items={link.children.map((item) => ({
+                          key: item.name,
+                          label: <a href={item.href}>{item.name}</a>,
+                        }))}
+                      />
+                    }
+                  >
+                    <a>
+                      <Space>
+                        {link.name}
+                        <DownOutlined />
+                      </Space>
+                    </a>
+                  </Dropdown>
+                </div>
+              );
+            }
+          })}
         </div>
         <div>
           <Button type='primary' style={{ marginRight: 12 }}>

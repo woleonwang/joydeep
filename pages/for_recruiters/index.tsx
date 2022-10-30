@@ -16,9 +16,9 @@ import styles from './style.module.scss';
 const ForRecruiters = () => {
   const howItWorkSteps = [
     'Create a profile.',
-    'Build your profile so we know your areas of expertise.',
-    'We match candidates and jobs with you.',
-    'You work with employers and candidates like you normally do.',
+    'Apply to join Landd',
+    'Get approved',
+    'Start making placements',
   ];
 
   return (
@@ -27,12 +27,14 @@ const ForRecruiters = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <div className={styles.title}>
-              Landd helps recruiters make many more placements, through data.
+              We help recruiters build their own business.
             </div>
             <div className={styles.body}>
-              Landd matches candidates and employers with you based on their
-              requirements and your strengths so you have a constant stream of
-              candidates to work with and jobs to work on.
+              A big shout out to all the experienced recruiters out there: you
+              do not have to work for a legacy recruitment agency! Landd
+              provides everything an experienced recruiter needs, from personal
+              branding to client acquisition, from admin support to software, to
+              build your own business.
             </div>
             {/* <div className={styles.content}>
               Landd provides the most efficient way to connect with the suitable
@@ -50,7 +52,7 @@ const ForRecruiters = () => {
               more placements.
             </div> */}
             <Button type='primary' className={styles.bannerButton}>
-              {'Create your recruiter profile now →'}
+              {'Join us now →'}
             </Button>
           </div>
           <div className={styles.right}>
@@ -75,11 +77,14 @@ const ForRecruiters = () => {
             />
           </div>
           <div className={styles.right}>
-            <div className={styles.blockTitle}>Let candidates find you</div>
+            <div className={styles.blockTitle}>
+              Build your personal recruiter brand
+            </div>
             <div className={styles.blockContent}>
-              Candidates actually love to work with good recruiters. We help
-              candidates find you by matching them with you based on your areas
-              of expertise and jobs you are working on.
+              Build your personal recruiter brand through our custom-designed
+              recruiter profile page which showcases your expertise, track
+              records, candidate/client resources and endorsements so clients
+              and candidates can find you quickly and remember you.
             </div>
           </div>
         </div>
@@ -89,29 +94,17 @@ const ForRecruiters = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <div className={styles.blockTitle}>
-              Get access to jobs from top employers
+              Retain 90% of recruitment fees
             </div>
             <div className={styles.blockContent}>
-              Many employers come to Landd to look for recruiters to work with.
-              Landd match their jobs based on your candidate pool and historical
-              placement data so you have the highest chance of making a
-              placement.
+              A legacy recruitment agency typically only pays out 20%-40% of
+              recruitment fees collected from a client to a recruiter, though it
+              is the recruiter that did most of the job. At Landd, we pay out up
+              to 90% of all the fees to recruiters because we believe you
+              deserve it.
             </div>
           </div>
           <div className={styles.right}>
-            <Image
-              src='/for_recruiters_3.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={classnames(styles.blockWrapper)}>
-        <div className={styles.block}>
-          <div className={styles.left}>
             <Image
               src='/for_recruiters_2.svg'
               width={472}
@@ -119,11 +112,27 @@ const ForRecruiters = () => {
               alt=''
             />
           </div>
+        </div>
+      </div>
+
+      <div className={classnames(styles.blockWrapper)}>
+        <div className={styles.block}>
+          <div className={styles.left}>
+            <Image
+              src='/for_recruiters_3.svg'
+              width={472}
+              height={472}
+              alt=''
+            />
+          </div>
           <div className={styles.right}>
-            <div className={styles.blockTitle}>Build your own brand</div>
+            <div className={styles.blockTitle}>
+              Connect with clients and candidates, based on data
+            </div>
             <div className={styles.blockContent}>
-              Build your personal brand on Landd so your clients and candidates
-              always remember you.
+              Landd connects you with clients and candidates constantly based on
+              your expertise so you always work on jobs/with candidates that
+              have the highest chance to result in a placement.
             </div>
           </div>
         </div>
@@ -132,16 +141,21 @@ const ForRecruiters = () => {
       <div className={classnames(styles.blockWrapper, styles.gray)}>
         <div className={styles.block}>
           <div className={styles.left}>
-            <div className={styles.blockTitle}>You own your data</div>
+            <div className={styles.blockTitle}>Own your data</div>
             <div className={styles.blockContent}>
-              All the data you upload on Landd are yours forever. No one else
-              (including Landd) is able to use your data. Even when you change
-              companies in the future or become an in-house recruiter, you can
-              still use the data stored here.
+              Your data are yours. Be it candidate or client data, it belongs to
+              you forever. Even if you leave Landd one day, you can still access
+              those data anytime. Landd will not use those data in anyway
+              without your consent.
             </div>
           </div>
           <div className={styles.right}>
-            <Image src='/reports.svg' width={472} height={472} alt='' />
+            <Image
+              src='/for_recruiters_4.svg'
+              width={472}
+              height={472}
+              alt=''
+            />
           </div>
         </div>
       </div>
@@ -150,39 +164,19 @@ const ForRecruiters = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <Image
-              src='/for_recruiters_4.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
-          <div className={styles.right}>
-            <div className={styles.blockTitle}>Easy to sign up</div>
-            <div className={styles.blockContent}>
-              Only a Linkedin-like recruiter profile is needed to start. No
-              other commitment needed.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={classnames(styles.blockWrapper, styles.gray)}>
-        <div className={styles.block}>
-          <div className={styles.left}>
-            <div className={styles.blockTitle}>Free to use</div>
-            <div className={styles.blockContent}>
-              Landd is completely free to use at the moment for early users. We
-              will implement a fee structure which will be result-based in the
-              future. We will let you know in advance when this happens.
-            </div>
-          </div>
-          <div className={styles.right}>
-            <Image
               src='/for_recruiters_5.svg'
               width={472}
               height={472}
               alt=''
             />
+          </div>
+          <div className={styles.right}>
+            <div className={styles.blockTitle}>Admin support</div>
+            <div className={styles.blockContent}>
+              You do not need to worry about admin chores such as applying for a
+              recruitment licence, etc. We do the heavy-lifting so you can focus
+              on what matters most: recruitment.
+            </div>
           </div>
         </div>
       </div>
@@ -199,7 +193,7 @@ const ForRecruiters = () => {
             type='primary'
             className={classnames(styles.bannerButton, styles.footer)}
           >
-            {'Create your recruiter profile now →'}
+            {'Join now →'}
           </Button>
         </div>
       </div>

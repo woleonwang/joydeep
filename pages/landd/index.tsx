@@ -19,18 +19,24 @@ const Home = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <div className={styles.title}>
-              Landd aims to build
+              Landd the best talent
               <br />
-              the biggest recruiter
+              for your teams in a
               <br />
-              network in Singapore
+              matter of days.
             </div>
             <div className={styles.body}>
-              We use a data-driven approach to help employers
+              Landd helps you build your dream team with an
               <br />
-              and candidates find the most suitable recruiters to
+              omni-channel approach through our network of
               <br />
-              work with from Landd’s extensive recruiter network.
+              experienced Landd Recruiters, Landd Partners referral
+              <br />
+              program and Landd Remote hiring solution. We
+              <br />
+              deliver to your hiring needs locally or remotely with
+              <br />
+              unparalleled speed.
             </div>
             <Button type='primary' className={styles.bannerButton}>
               {'Start hiring now →'}
@@ -56,16 +62,14 @@ const Home = () => {
               height={160}
               alt='for_employer'
             />
-            <div className={styles.blockTitle}>For employer</div>
+            <div className={styles.blockTitle}>Landd Recruiters</div>
             <div className={styles.blockContent}>
-              We match you with the recruiters that can deliver candidates to
-              your roles most effectively based on their candidate pools and
-              historical placement data. We eliminate the guess work so you can
-              rest assured that your roles are being worked on by the most
-              suitable recruiters.
+              Work with the best recruiters in Singapore through our Landd
+              Recruiters solution. We match you with the recruiters who have the
+              most ...
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_employer'>Learn more</Link>
+              <Link href='/for_recruiters'>Learn more</Link>
             </div>
           </div>
           <div>
@@ -75,18 +79,13 @@ const Home = () => {
               height={160}
               alt='for_candidates'
             />
-            <div className={styles.blockTitle}>For candidates</div>
+            <div className={styles.blockTitle}>Landd Partners</div>
             <div className={styles.blockContent}>
-              The best way to find your next dream job for any experienced
-              professionals is to work with experienced recruiters in your
-              industry.  Landd matches you with the most suitable recruiters
-              based on the jobs they are currently working on and their
-              historical placement data. No matter you are looking for a job now
-              or you simply would like to understand how the market is, you can
-              always find the most suitable recruiters to talk to on Landd.
+              Get access to hard-to-find candidates in online communities and
+              private networks with our Landd Partners Network.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_employer'>Learn more</Link>
+              <Link href='/for_parteners'>Learn more</Link>
             </div>
           </div>
           <div>
@@ -96,13 +95,14 @@ const Home = () => {
               height={160}
               alt='for_recruiters'
             />
-            <div className={styles.blockTitle}>For recruiters</div>
+            <div className={styles.blockTitle}>Landd Remote</div>
             <div className={styles.blockContent}>
-              Landd helps recruiters make more placements by matching candidates
-              and jobs to you based on your expertise and resources.
+              Build top-notch remote engineering teams with Landd Remote. Hire
+              the best pre-vetted software engineers globally in a matter of
+              days.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_employer'>Learn more</Link>
+              <Link href='/for_parteners'>Learn more</Link>
             </div>
           </div>
         </div>
