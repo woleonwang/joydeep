@@ -8,9 +8,9 @@
 /** @type {import('next').NextConfig} */
 
 const Host =
-  process.env.NODE_ENV === 'development'
+  false && process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'http://101.133.134.202';
+    : 'http://47.100.196.229';
 
 const nextConfig = {
   reactStrictMode: true,
