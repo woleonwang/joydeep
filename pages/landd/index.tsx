@@ -66,7 +66,8 @@ const Home = () => {
             <div className={styles.blockContent}>
               Work with the best recruiters in Singapore through our Landd
               Recruiters solution. We match you with the recruiters who have the
-              most ...
+              most relevant expertise and resources to deliver to your jobs
+              based on years of authentic recruitment data.
             </div>
             <div className={styles.learnMore}>
               <Link href='/for_recruiters'>Learn more</Link>

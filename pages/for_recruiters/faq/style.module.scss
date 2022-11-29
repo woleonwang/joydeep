@@ -1,0 +1,44 @@
+.faqContainer {
+  width: 864px;
+  margin: 168px auto 0;
+}
+
+.title {
+  @include fs50b;
+  text-align: center;
+}
+
+.questionWrapper {
+  margin-top: 88px;
+  background-color: #f6f8fc;
+  border-radius: 32px;
+}
+
+.questionBlock {
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(31, 31, 31, 0.18);
+  }
+  padding: 32px 24px;
+
+  .question {
+    @include fs16b;
+  }
+
+  .answer {
+    @include fs14;
+    line-height: 21px;
+    color: rgba(31, 31, 31, 0.76);
+    margin-top: 12px;
+  }
+
+  .item {
+    display: flex;
+    .index {
+      flex: none;
+      margin-right: 5px;
+    }
+    .content {
+      flex: 1;
+    }
+  }
+}

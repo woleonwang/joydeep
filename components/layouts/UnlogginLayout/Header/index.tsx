@@ -31,12 +31,12 @@ const Header = () => {
       ],
     },
     {
-      name: 'Start Hiring Now',
-      href: '/sign_up',
+      name: 'FAQ',
+      href: '/for_recruiters/faq',
     },
     {
       name: 'About',
-      href: '/contact',
+      href: '/about',
     },
   ];
 

@@ -14,12 +14,6 @@ import UnlogginLayout from '../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
 const ForEmployers = () => {
-  const howItWorkSteps = [
-    'Tell us what roles you are hiring.',
-    'We match 1-3 suitable recruiters for you.',
-    'Recruiters contact you for further discussions.',
-  ];
-
   return (
     <div>
       <div className={classnames(styles.blockWrapper, styles.banner)}>

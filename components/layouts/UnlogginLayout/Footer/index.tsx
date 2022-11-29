@@ -11,10 +11,10 @@ import styles from './style.module.scss';
 
 const Header = () => {
   const links = [
-    {
-      name: 'Search for a recruiter',
-      href: '/',
-    },
+    // {
+    //   name: 'Search for a recruiter',
+    //   href: '/',
+    // },
     {
       name: 'For employers',
       href: '/for_parteners',
