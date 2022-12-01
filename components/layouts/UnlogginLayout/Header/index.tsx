@@ -26,7 +26,7 @@ const Header = () => {
         },
         {
           name: 'Landd Remote',
-          href: '/',
+          href: '/employer',
         },
       ],
     },
@@ -85,10 +85,7 @@ const Header = () => {
         </div>
         <div>
           <Button type='primary' style={{ marginRight: 12 }}>
-            Signup
-          </Button>
-          <Button type='primary' ghost>
-            Login
+            Start hiring now
           </Button>
         </div>
       </div>

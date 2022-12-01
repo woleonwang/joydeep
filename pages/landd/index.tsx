@@ -103,7 +103,7 @@ const Home = () => {
               days.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_parteners'>Learn more</Link>
+              <Link href='/employer'>Learn more</Link>
             </div>
           </div>
         </div>

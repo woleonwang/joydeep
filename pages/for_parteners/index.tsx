@@ -29,7 +29,8 @@ const ForEmployers = () => {
             </div>
             <div className={styles.content}>
               Landd connects you with the best recruiters in Singapore based on
-              comprehensive recruiter data.
+              comprehensive recruiter data so your jobs will be worked on by the
+              recruiters who have the highest chance to deliver to it fast.
             </div>
           </div>
           <div className={styles.right}>

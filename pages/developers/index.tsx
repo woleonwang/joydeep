@@ -30,7 +30,7 @@ const Developers = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <div className={styles.title}>
-              帮中国程序员2获得
+              帮中国程序员获得
               <br />
               全世界的
               <br />
