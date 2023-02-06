@@ -1,0 +1,58 @@
+.container {
+  height: 100%;
+  padding: 16px;
+  background-color: #f6f8fc;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: none;
+}
+
+.body {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .menuContainer {
+    flex: auto;
+    .menu {
+      padding: 0 16px;
+      height: 48px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: rgba(31, 31, 31, 1);
+      }
+
+      :global {
+        .anticon {
+          margin-right: 10px;
+          font-size: 16px;
+        }
+      }
+
+      &.selected {
+        background-color: white;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08),
+          0px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .percentContainer {
+    flex: none;
+    .text {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}

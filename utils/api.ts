@@ -18,6 +18,7 @@ const api: ApiConfig = {
   admin: {
     checkToken: '/check_admin_token',
   },
+  // developers
   users: {
     sendCode: '/users/send_verification_code',
     signUp: '/users/sign_up',
@@ -44,6 +45,12 @@ const api: ApiConfig = {
 
   recruiterForm: {
     create: '/recruiter_forms',
+  },
+
+  recruiters: {
+    sendCode: '/recruiters/send_verification_code',
+    signUp: '/recruiters/sign_up',
+    signIn: '/recruiters/sign_in_by_code',
   },
 };
 

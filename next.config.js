@@ -8,7 +8,7 @@
 /** @type {import('next').NextConfig} */
 
 const Host =
-  false && process.env.NODE_ENV === 'development'
+  process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
     : 'http://47.100.196.229';
 
