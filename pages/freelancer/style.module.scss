@@ -81,9 +81,48 @@
 
   .profileWrapper {
     width: 715px;
-    height: 959px;
+    height: 759px;
     overflow: auto;
     margin: 112px auto 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .profile {
+      width: 100%;
+    }
+  }
+}
+
+.endorsementWrapper {
+  background-color: rgba(234, 238, 255, 1);
+
+  .blockTitle {
+    width: 667px;
+    .blue {
+      color: rgba(0, 122, 255, 1);
+    }
+  }
+
+  .blockContent {
+    width: 495px;
+  }
+
+  .endorsementImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .endorsementSymbol1Img {
+    position: absolute;
+    left: 60px;
+    top: 90px;
+  }
+
+  .endorsementSymbol2Img {
+    position: absolute;
+    left: 440px;
+    bottom: 50px;
   }
 }
 
@@ -107,12 +146,12 @@
 }
 
 .blockTitle {
-  @include fs40b;
+  @include fs60b;
 }
 
 .blockContent {
-  @include fs16;
-  margin-top: 24px;
+  @include fs24;
+  margin-top: 57px;
 }
 
 .blockWrapper {
@@ -125,9 +164,8 @@
 .block {
   width: 1440px;
   margin: auto;
-  display: flex;
-  align-items: center;
   padding: 120px;
+  position: relative;
 
   > div {
     flex: 1;

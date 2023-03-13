@@ -113,7 +113,7 @@ const FreeLancer = () => {
             <div className={styles.profileWrapper}>
               <img
                 className={styles.profile}
-                src='/freelancer/profile.svg'
+                src='/freelancer/profile.jpg'
                 alt='profile'
               />
             </div>
@@ -121,28 +121,39 @@ const FreeLancer = () => {
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper, styles.gray)}>
+      <div
+        className={classnames(styles.blockWrapper, styles.endorsementWrapper)}
+      >
         <div className={styles.block}>
-          <div className={styles.left}>
+          <div>
             <div className={styles.blockTitle}>
-              Gather <span>endorsements</span> with ease
+              Gather <span className={styles.blue}>endorsements</span>
+              <br /> with ease
             </div>
             <div className={styles.blockContent}>
               Asking for endorsements from a customer can be awkward. We make it
               easy for you and your customers with our simple endorsement tool.
               <br />
+              <br />
               You can gather and publish an endorsement into your recruiter
               profile in seconds.
             </div>
           </div>
-          <div className={styles.right}>
-            <Image
-              src='/for_recruiters_2.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
+          <img
+            className={styles.endorsementImg}
+            src='/freelancer/endorsements.svg'
+            alt='endorsements'
+          />
+          <img
+            className={styles.endorsementSymbol1Img}
+            src='/freelancer/endorsementsSymbol-1.svg'
+            alt='endorsements1'
+          />
+          <img
+            className={styles.endorsementSymbol2Img}
+            src='/freelancer/endorsementsSymbol-2.svg'
+            alt='endorsements2'
+          />
         </div>
       </div>
 
