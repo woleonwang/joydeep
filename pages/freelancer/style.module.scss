@@ -1,36 +1,104 @@
 .banner {
-  padding-top: 100px;
-  padding-bottom: 180px;
-  background-color: rgba(253, 174, 70, 0.12);
+  height: 900px;
+  padding-top: 215px;
+  background-color: #f2fcff;
+
+  .innerBlock {
+    position: relative;
+    height: 100%;
+    width: 1440px;
+    margin: auto;
+    padding: 0 120px;
+  }
+
+  .bannerImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1400px;
+  }
+
+  .bannerStar {
+    position: absolute;
+    top: 126px;
+    left: 717px;
+  }
+
+  .bannerLine {
+    position: absolute;
+    top: 60px;
+    left: 350px;
+  }
+
+  .bannerFree {
+    position: absolute;
+    top: 500px;
+    left: 530px;
+  }
 
   .title {
-    @include fs36b;
+    @include fs48b;
+  }
+
+  .text {
+    position: relative;
   }
 
   .body {
-    @include fs16;
-    margin-top: 24px;
+    @include fs24;
+    margin-top: 45px;
   }
 
-  .content {
-    @include fs14;
-    margin-top: 24px;
+  .line {
+    margin-bottom: 15px;
+    @include fs24;
+  }
+
+  .firstLetter {
+    @include fs24b;
+    color: rgba(0, 122, 255, 1);
+  }
+}
+
+.profileBlock {
+  .blockTitle {
+    @include fs40b;
+    text-align: center;
+  }
+
+  .blockContent {
+    @include fs24;
+    text-align: center;
+    position: relative;
+  }
+
+  .profileCircle {
+    position: absolute;
+    top: 56px;
+    left: 493px;
+    z-index: -1;
+  }
+
+  .profileWrapper {
+    width: 715px;
+    height: 959px;
+    overflow: auto;
+    margin: 112px auto 0;
   }
 }
 
 .bannerButton {
-  width: 200px;
-  height: 64px;
-  border-radius: 32px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 24px;
-  background-color: #fdae46;
-  border-color: #fdae46;
+  width: 404px;
+  height: 100px;
+  border-radius: 20px;
+  @include fs24b;
+  margin-top: 44px;
+  background-color: #007aff;
+  border-color: #007aff;
   &:hover,
   &:focus {
-    background-color: #fdae46;
-    border-color: #fdae46;
+    background-color: #007aff;
+    border-color: #007aff;
   }
 
   &.footer {
@@ -39,7 +107,7 @@
 }
 
 .blockTitle {
-  @include fs24b;
+  @include fs40b;
 }
 
 .blockContent {
@@ -48,17 +116,18 @@
 }
 
 .blockWrapper {
+  min-width: 1440px;
   &.gray {
     background-color: rgba(245, 245, 245, 0.72);
   }
 }
 
 .block {
-  width: 960px;
+  width: 1440px;
   margin: auto;
   display: flex;
   align-items: center;
-  padding: 24px;
+  padding: 120px;
 
   > div {
     flex: 1;

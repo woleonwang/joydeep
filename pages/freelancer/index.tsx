@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /*
  * @Author: wmy
  * @Date: 2022-02-19 23:36:13
@@ -16,8 +17,28 @@ const FreeLancer = () => {
   return (
     <div>
       <div className={classnames(styles.blockWrapper, styles.banner)}>
-        <div className={styles.block}>
-          <div className={styles.left}>
+        <div className={styles.innerBlock}>
+          <img
+            className={styles.bannerImg}
+            src='/freelancer/banner.png'
+            alt='hirerring'
+          />
+          <img
+            className={styles.bannerStar}
+            src='/freelancer/star.svg'
+            alt='star'
+          />
+          <img
+            className={styles.bannerLine}
+            src='/freelancer/line.svg'
+            alt='line'
+          />
+          <img
+            className={styles.bannerFree}
+            src='/freelancer/free.svg'
+            alt='free'
+          />
+          <div className={styles.text}>
             <div className={styles.title}>
               Create a specially-designed
               <br />
@@ -26,49 +47,74 @@ const FreeLancer = () => {
               more clients & candidates
             </div>
             <div className={styles.body}>
-              <div>
-                <span>S</span>howcase your track records
+              <div className={styles.line}>
+                <img
+                  className={styles.bannerArrow}
+                  src='/freelancer/arrow.svg'
+                  alt='arrow'
+                />
+                <span className={styles.firstLetter}>S</span>howcase your track
+                records
               </div>
-              <div>
-                <span>G</span>ather and show endorsements easily
+              <div className={styles.line}>
+                <img
+                  className={styles.bannerArrow}
+                  src='/freelancer/arrow.svg'
+                  alt='arrow'
+                />
+                <span className={styles.firstLetter}>G</span>ather and show
+                endorsements easily
               </div>
-              <div>
-                <span>D</span>isplay your candidate resources
+              <div className={styles.line}>
+                <img
+                  className={styles.bannerArrow}
+                  src='/freelancer/arrow.svg'
+                  alt='arrow'
+                />
+                <span className={styles.firstLetter}>D</span>isplay your
+                candidate resources
               </div>
-              <div>
-                <span>A</span>ggregate your posts/publications
+              <div className={styles.line}>
+                <img
+                  className={styles.bannerArrow}
+                  src='/freelancer/arrow.svg'
+                  alt='arrow'
+                />
+                <span className={styles.firstLetter}>A</span>ggregate your
+                posts/publications
               </div>
             </div>
             <Button type='primary' className={styles.bannerButton}>
               {'Create your profile now →'}
             </Button>
           </div>
-          <div className={styles.right}>
-            <Image
-              src='/for_recruiters.svg'
-              width={376}
-              height={600}
-              alt='hirerring'
-            />
-          </div>
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper)}>
+      <div className={classnames(styles.blockWrapper, styles.profileBlock)}>
         <div className={styles.block}>
           <div className={styles.content}>
             <div className={styles.blockTitle}>Deep recruiter profile</div>
             <div className={styles.blockContent}>
-              A deep recruiter profile is your homepage where you showcase your
-              expertise, resources and track records. It is where you build your
-              personal brand which helps you attract more clients & candidates.
+              <img
+                className={styles.profileCircle}
+                src='/freelancer/profileCircle.svg'
+                alt='circle'
+              />
+              <div>
+                A deep recruiter profile is your homepage where you showcase
+                your expertise,
+                <br />
+                resources and track records. It is where you build your personal
+                brand which
+                <br /> helps you attract more clients & candidates.
+              </div>
             </div>
-            <div>
-              <Image
-                src='/for_recruiters.svg'
-                width={376}
-                height={600}
-                alt='hirerring'
+            <div className={styles.profileWrapper}>
+              <img
+                className={styles.profile}
+                src='/freelancer/profile.svg'
+                alt='profile'
               />
             </div>
           </div>

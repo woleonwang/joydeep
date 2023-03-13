@@ -8,13 +8,39 @@
   src: url('/Montserrat-Bold.ttf');
 }
 
+@font-face {
+  font-family: SpaceGrotest;
+  src: url('/fonts/SpaceGrotesk-Light.ttf');
+}
+
+@font-face {
+  font-family: SpaceGrotest-Bold;
+  src: url('/fonts/SpaceGrotesk-Bold.ttf');
+}
+
+@font-face {
+  font-family: SpaceGrotest-Light;
+  src: url('/fonts/SpaceGrotesk-Light.ttf');
+}
+
+@font-face {
+  font-family: SpaceGrotest-Medium;
+  src: url('/fonts/SpaceGrotesk-Medium.ttf');
+}
+
+@font-face {
+  font-family: SpaceGrotest-SemiBold;
+  src: url('/fonts/SpaceGrotesk-SemiBold.ttf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   color: rgba(31, 31, 31, 1);
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'SpaceGrotest', -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
 a {
