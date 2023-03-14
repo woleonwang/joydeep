@@ -10,7 +10,7 @@
 
 @mixin fs14b {
   @include fs14;
-  font-weight: bold;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs16 {
@@ -20,12 +20,17 @@
 
 @mixin fs16b {
   @include fs16;
-  font-weight: bold;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs18 {
   font-size: 18px;
   line-height: 27px;
+}
+
+@mixin fs18b {
+  @include fs18;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs20 {
@@ -35,7 +40,7 @@
 
 @mixin fs20b {
   @include fs20;
-  font-weight: bold;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs24 {
@@ -55,7 +60,7 @@
 
 @mixin fs28b {
   @include fs28;
-  font-weight: bold;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs32 {
@@ -65,7 +70,7 @@
 
 @mixin fs32b {
   @include fs32;
-  font-weight: bold;
+  font-family: SpaceGrotest-Bold;
 }
 
 @mixin fs36b {

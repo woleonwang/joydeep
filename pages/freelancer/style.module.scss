@@ -15,13 +15,19 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 1400px;
+    width: 680px;
   }
 
   .bannerStar {
     position: absolute;
     top: 126px;
     left: 717px;
+  }
+
+  .bannerStar2 {
+    position: absolute;
+    top: -40px;
+    right: 328px;
   }
 
   .bannerLine {
@@ -58,9 +64,28 @@
     @include fs24b;
     color: rgba(0, 122, 255, 1);
   }
+
+  .bannerButton {
+    width: 404px;
+    height: 100px;
+    border-radius: 20px;
+    @include fs24b;
+    margin-top: 44px;
+    background-color: #007aff;
+    border-color: #007aff;
+    &:hover,
+    &:focus {
+      background-color: #007aff;
+      border-color: #007aff;
+    }
+  }
 }
 
 .profileBlock {
+  .content {
+    position: relative;
+  }
+
   .blockTitle {
     @include fs40b;
     text-align: center;
@@ -79,6 +104,12 @@
     z-index: -1;
   }
 
+  .scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 90px;
+  }
+
   .profileWrapper {
     width: 715px;
     height: 759px;
@@ -90,6 +121,24 @@
     .profile {
       width: 100%;
     }
+  }
+
+  .createProfileBtn {
+    position: absolute;
+    bottom: 0;
+    left: 112px;
+    right: 112px;
+    height: 75px;
+    text-align: center;
+    padding-top: 25px;
+    color: rgba(0, 122, 255, 1);
+    @include fs16b;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.81) 48.93%,
+      #ffffff 100%
+    );
   }
 }
 
@@ -126,22 +175,163 @@
   }
 }
 
-.bannerButton {
-  width: 404px;
-  height: 100px;
-  border-radius: 20px;
-  @include fs24b;
-  margin-top: 44px;
-  background-color: #007aff;
-  border-color: #007aff;
-  &:hover,
-  &:focus {
-    background-color: #007aff;
-    border-color: #007aff;
+.referralWrapper {
+  background-color: #f6f6f6;
+
+  .block {
+    padding-bottom: 190px;
   }
 
-  &.footer {
-    margin: 180px auto 140px;
+  .referralTextWrapper {
+    margin-left: 625px;
+  }
+
+  .blockTitle {
+    width: 615px;
+  }
+
+  .blockContent {
+    width: 495px;
+  }
+
+  .referralImg {
+    position: absolute;
+    left: 0;
+    top: 100px;
+  }
+
+  .referralSymbol1Img {
+    position: absolute;
+    right: 113px;
+    top: 62px;
+  }
+
+  .referralSymbol2Img {
+    position: absolute;
+    right: 277px;
+    bottom: 98px;
+  }
+}
+
+.joinWrapper {
+  background-color: #fefeef;
+
+  .block {
+    padding-bottom: 150px;
+  }
+
+  .blockTitle {
+    width: 667px;
+  }
+
+  .blockContent {
+    width: 495px;
+  }
+
+  .joinImg {
+    position: absolute;
+    right: 48px;
+    top: 140px;
+  }
+
+  .joinSymbol1Img {
+    position: absolute;
+    right: 442px;
+    top: 77px;
+  }
+
+  .joinSymbol2Img {
+    position: absolute;
+    left: 463px;
+    bottom: 43px;
+  }
+
+  .joinButton {
+    width: 264px;
+    height: 70px;
+    border-radius: 25px;
+    @include fs20b;
+    margin-top: 40px;
+    color: white;
+    background-color: rgba(123, 141, 218, 1);
+    border-color: rgba(123, 141, 218, 1);
+    pointer-events: none;
+  }
+}
+
+.buildWrapper {
+  .block {
+    padding-bottom: 60px;
+  }
+
+  .buildTextWrapper {
+    margin-left: 625px;
+  }
+
+  .blockTitle {
+    width: 615px;
+  }
+
+  .blockContent {
+    width: 495px;
+  }
+
+  .buildImg {
+    position: absolute;
+    left: 0;
+    top: 130px;
+  }
+
+  .buildSymbol1Img {
+    position: absolute;
+    right: 113px;
+    top: 62px;
+  }
+
+  .buildSymbol2Img {
+    position: absolute;
+    left: 764px;
+    top: 280px;
+  }
+
+  .buildSymbol3Img {
+    position: absolute;
+    left: 322px;
+    bottom: 40px;
+  }
+
+  .buildButton {
+    width: 264px;
+    height: 70px;
+    border-radius: 20px;
+    @include fs20b;
+    margin-top: 53px;
+    color: white;
+    background-color: #ffd200;
+    border-color: #ffd200;
+    pointer-events: none;
+  }
+}
+
+.createProfileWrapper {
+  background-color: #f6f6f6;
+
+  .block {
+    text-align: center;
+  }
+
+  .createButton {
+    width: 404px;
+    height: 100px;
+    border-radius: 20px;
+    @include fs24b;
+    background-color: #007aff;
+    border-color: #007aff;
+    &:hover,
+    &:focus {
+      background-color: #007aff;
+      border-color: #007aff;
+    }
   }
 }
 

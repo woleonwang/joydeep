@@ -9,7 +9,6 @@
 
 import { Button } from 'antd';
 import classnames from 'classnames';
-import Image from 'next/image';
 import UnlogginLayout from '../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
@@ -27,6 +26,11 @@ const FreeLancer = () => {
             className={styles.bannerStar}
             src='/freelancer/star.svg'
             alt='star'
+          />
+          <img
+            className={styles.bannerStar2}
+            src='/freelancer/star2.svg'
+            alt='star2'
           />
           <img
             className={styles.bannerLine}
@@ -116,7 +120,15 @@ const FreeLancer = () => {
                 src='/freelancer/profile.jpg'
                 alt='profile'
               />
+              <div className={styles.createProfileBtn}>
+                Create your profile now
+              </div>
             </div>
+            <img
+              className={styles.scroll}
+              src='/freelancer/scroll.svg'
+              alt='scroll'
+            />
           </div>
         </div>
       </div>
@@ -157,17 +169,9 @@ const FreeLancer = () => {
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper)}>
+      <div className={classnames(styles.blockWrapper, styles.referralWrapper)}>
         <div className={styles.block}>
-          <div className={styles.left}>
-            <Image
-              src='/for_recruiters_3.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
-          <div className={styles.right}>
+          <div className={styles.referralTextWrapper}>
             <div className={styles.blockTitle}>
               Get candidate & client referrals
             </div>
@@ -178,12 +182,27 @@ const FreeLancer = () => {
               on the data on your profile.
             </div>
           </div>
+          <img
+            className={styles.referralImg}
+            src='/freelancer/referral.svg'
+            alt='referral1'
+          />
+          <img
+            className={styles.referralSymbol1Img}
+            src='/freelancer/referralSymbol-1.svg'
+            alt='referral1'
+          />
+          <img
+            className={styles.referralSymbol2Img}
+            src='/freelancer/referralSymbol-2.svg'
+            alt='referral2'
+          />
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper, styles.gray)}>
+      <div className={classnames(styles.blockWrapper, styles.joinWrapper)}>
         <div className={styles.block}>
-          <div className={styles.left}>
+          <div>
             <div className={styles.blockTitle}>
               Join our recruiter community{' '}
             </div>
@@ -192,32 +211,29 @@ const FreeLancer = () => {
               get industry news? Join our recruiter community and let us
               recruiters support each other.
             </div>
-            <div>
-              <Button>Under Construction</Button>
-            </div>
+            <Button className={styles.joinButton}>Under Construction</Button>
           </div>
-          <div className={styles.right}>
-            <Image
-              src='/for_recruiters_4.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
+          <img
+            className={styles.joinImg}
+            src='/freelancer/join.svg'
+            alt='join'
+          />
+          <img
+            className={styles.joinSymbol1Img}
+            src='/freelancer/joinSymbol-1.svg'
+            alt='join1'
+          />
+          <img
+            className={styles.joinSymbol2Img}
+            src='/freelancer/joinSymbol-2.svg'
+            alt='join2'
+          />
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper)}>
+      <div className={classnames(styles.blockWrapper, styles.buildWrapper)}>
         <div className={styles.block}>
-          <div className={styles.left}>
-            <Image
-              src='/for_recruiters_5.svg'
-              width={472}
-              height={472}
-              alt=''
-            />
-          </div>
-          <div className={styles.right}>
+          <div className={styles.buildTextWrapper}>
             <div className={styles.blockTitle}>Build your own business</div>
             <div className={styles.blockContent}>
               We provide a suite of tools that helps experienced recruiters
@@ -225,14 +241,38 @@ const FreeLancer = () => {
               when to work, who to work with, on what terms, and retain 90% of
               the recruitment fees paid by employers.
             </div>
-            <Button>Learn more →</Button>
+            <Button className={styles.buildButton}>Learn more →</Button>
           </div>
+          <img
+            className={styles.buildImg}
+            src='/freelancer/build.svg'
+            alt='build'
+          />
+          <img
+            className={styles.buildSymbol1Img}
+            src='/freelancer/buildSymbol-1.svg'
+            alt='build1'
+          />
+          <img
+            className={styles.buildSymbol2Img}
+            src='/freelancer/buildSymbol-2.svg'
+            alt='build2'
+          />
+          <img
+            className={styles.buildSymbol3Img}
+            src='/freelancer/buildSymbol-3.svg'
+            alt='build3'
+          />
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper)}>
+      <div
+        className={classnames(styles.blockWrapper, styles.createProfileWrapper)}
+      >
         <div className={styles.block}>
-          <Button>Create your profile now →</Button>
+          <Button type='primary' className={styles.createButton}>
+            Create your profile now →
+          </Button>
         </div>
       </div>
     </div>
