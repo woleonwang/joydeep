@@ -28,29 +28,24 @@ const Sidebar = (props: IProps) => {
 
   const menu = [
     {
-      key: 'basic_info',
-      label: 'Basic Info',
+      key: 'profile',
+      label: 'Profile',
       icon: <HomeOutlined />,
-      href: '/recruiters/basic_info',
+      href: '/recruiters/profile',
     },
     {
-      key: 'candidates',
-      label: 'My Candidates',
+      key: 'endorsements',
+      label: 'Endorsements',
       icon: <ProfileOutlined />,
-      href: '/recruiters/candidates',
-    },
-    {
-      key: 'jobs',
-      label: 'My Jobs',
-      icon: <MoneyCollectOutlined />,
-      href: '/developers/jobs',
+      href: '/recruiters/endorsements',
     },
   ];
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Image src='/logo.svg' width={141} height={48} alt='logo' />
+        <Image src='/logo.svg' width={121} height={38} alt='logo' />
+        <div className={styles.tag}>Recruiter</div>
       </div>
       <div className={styles.body}>
         <div className={styles.menuContainer}>

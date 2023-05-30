@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const { useForm, Item } = Form;
-const BasicInfo = (props: IProps) => {
+const Endorsements = (props: IProps) => {
   const { propName } = props;
 
   const [state, setState] = useState();
@@ -22,7 +22,7 @@ const BasicInfo = (props: IProps) => {
   const fetchData = async () => {};
 
   return (
-    <RecruiterSidebarLayout activeMenu='basic_info'>
+    <RecruiterSidebarLayout activeMenu='endorsements'>
       <Form form={form} layout='vertical'>
         <div>Basic info</div>
         <Item
@@ -63,6 +63,6 @@ const BasicInfo = (props: IProps) => {
   );
 };
 
-BasicInfo.layout = RecruiterLogginLayout;
+Endorsements.layout = RecruiterLogginLayout;
 
-export default BasicInfo;
+export default Endorsements;

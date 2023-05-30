@@ -28,4 +28,8 @@ export const getStorage = (key: string): any => {
   }
 };
 
+export const formatNumber = (n: number): string => {
+  return n.toLocaleString('en-US');
+};
+
 export const RecommendTokenKey = 'recommend_token';

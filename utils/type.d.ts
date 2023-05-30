@@ -61,3 +61,66 @@ export interface IProfile {
   }[];
   worktime_per_week: number;
 }
+
+interface IBasicInfo {
+  avatar: string;
+  firstName: string;
+  lastName: string;
+  description: string;
+  company: string;
+  experiences: number;
+  expertise: string[];
+}
+
+interface ITrackRecords {
+  isVerified: boolean;
+  placedNumber: number;
+  placedSalary: number;
+  placements: {
+    timestamp: string;
+    description: string;
+    isVerified: boolean;
+  }[];
+}
+
+interface ICandidate {
+  isVerified: boolean;
+  candidatesCount: number;
+  jobTitles: {
+    name: string;
+    count: number;
+  }[];
+}
+
+interface IEndorsements {
+  total: number;
+  endorsements: IEndorsementItem[];
+}
+
+interface IEndorsementItem {
+  avatar: string;
+  name: string;
+  company: string;
+  timestamp: string;
+  content: string;
+  type: 'employer' | 'candidate';
+}
+
+interface IPublications {
+  publications: {
+    timestamp: string;
+    content: string;
+  }[];
+}
+
+interface IFeaturedJobs {
+  jobs: { title: string; company: string; description: string }[];
+}
+interface IRecruiterProfile {
+  basicInfo: IBasicInfo;
+  trackRecords: ITrackRecords;
+  candidates: ICandidate;
+  endorsements: IEndorsements;
+  publications: IPublications;
+  featuredJobs: IFeaturedJobs;
+}
