@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from 'antd';
 import { IBasicInfo } from 'utils/type';
 import styles from './style.module.scss';
@@ -13,7 +14,7 @@ const BasicInfo = (props: IProps) => {
         <div className={styles.left}>
           <div className={styles.head}>
             <div className={styles.avatar}>
-              <img src={basicInfo.avatar} />
+              <img src={basicInfo.avatar} alt='' />
             </div>
             <div className={styles.name}>
               {basicInfo.firstName + ' ' + basicInfo.lastName}

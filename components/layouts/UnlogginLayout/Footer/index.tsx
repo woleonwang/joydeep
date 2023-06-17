@@ -8,6 +8,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './style.module.scss';
+import { Button } from 'antd';
 
 const Header = () => {
   const links = [
@@ -46,14 +47,6 @@ const Header = () => {
             </div>
           ))}
         </div>
-        {/* <div>
-          <Button type='primary' style={{ marginRight: 12 }}>
-            Signup
-          </Button>
-          <Button type='primary' ghost>
-            Login
-          </Button>
-        </div> */}
       </div>
     </div>
   );

@@ -1,37 +1,53 @@
 .banner {
   padding-top: 180px;
-  padding-bottom: 180px;
-  background-color: rgba(0, 122, 255, 0.12);
 }
 
 .second {
+  margin-top: 143px;
   .block {
-    position: relative;
-    top: -50px;
-    background-color: white;
     align-items: flex-start;
-    border-radius: 6px;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12),
-      0px 0px 1px 1px rgba(0, 0, 0, 0.03);
     & > div {
       flex: 1;
     }
     & > div:not(:first-child) {
-      margin-left: 48px;
+      margin-left: 30px;
+    }
+
+    .secondCard {
+      border: 1px solid rgba(225, 225, 225, 1);
+      border-radius: 18px;
+      padding: 32px;
     }
 
     .blockTitle {
-      @include fs16b;
+      @include fs24b;
     }
 
     .blockContent {
-      @include fs14;
+      @include fs16;
       margin-top: 12px;
+      height: 100px;
     }
 
     .learnMore {
+      padding: 12px 32px;
       margin-top: 12px;
       color: #007aff;
+      border: 2px solid #007aff;
+      border-radius: 30px;
+      display: inline-block;
+      @include fs16b;
+      cursor: pointer;
+    }
+
+    .symbol {
+      font-size: 24px;
+      margin-left: 16px;
+    }
+
+    img {
+      width: 490px;
+      margin-top: 67px;
     }
   }
 }
@@ -39,21 +55,43 @@
 .bannerButton {
   width: 295px;
   height: 64px;
-  border-radius: 32px;
+  border-radius: 20px;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 24px;
+  margin-top: 80px;
+  background-color: #007aff;
 }
 
 .block {
-  width: 1000px;
+  width: 1200px;
   margin: auto;
   display: flex;
-  align-items: center;
-  padding: 24px;
+  padding: 30px;
 
   .title {
-    @include fs36b;
+    @include fs48b;
+  }
+
+  .colored {
+    background: linear-gradient(
+      270deg,
+      #84d3ff 12.19%,
+      #6f7cfa 23.7%,
+      #b377ff 35.7%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 5px;
+      background-color: #f4ecff;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
   }
 
   .body {
@@ -64,5 +102,6 @@
 
   .right {
     margin-left: 55px;
+    margin-top: 40px;
   }
 }

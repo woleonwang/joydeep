@@ -47,7 +47,7 @@ const DefaultLayout = ({ children }: IProps) => {
     }
   };
 
-  return pending ? <div>Loding</div> : children;
+  return pending ? <div>Loading</div> : children;
 };
 
 export default DefaultLayout;
