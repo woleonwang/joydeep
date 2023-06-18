@@ -79,9 +79,13 @@
   font-family: SpaceGrotest-Bold;
 }
 
-@mixin fs40b {
+@mixin fs40 {
   font-size: 40px;
   line-height: 48px;
+}
+
+@mixin fs40b {
+  @include fs40;
   font-family: SpaceGrotest-Bold;
 }
 
@@ -149,4 +153,15 @@
   @include fs16b;
 }
 
+@mixin bannerBtn {
+  width: 295px;
+  height: 64px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 80px;
+  background-color: #007aff;
+}
+
 $main-width: 1440px;
+$inner-width: 1200px;

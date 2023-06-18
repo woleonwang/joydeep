@@ -9,10 +9,10 @@
 
 import { Button } from 'antd';
 import classnames from 'classnames';
-import UnlogginLayout from '../../components/layouts/UnlogginLayout';
+import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
-const FreeLancer = () => {
+const ForRecruiters = () => {
   return (
     <div>
       <div className={classnames(styles.blockWrapper, styles.banner)}>
@@ -279,6 +279,6 @@ const FreeLancer = () => {
   );
 };
 
-FreeLancer.layout = UnlogginLayout;
+ForRecruiters.layout = UnlogginLayout;
 
-export default FreeLancer;
+export default ForRecruiters;

@@ -1,0 +1,136 @@
+.banner {
+  padding-top: 270px;
+  padding-bottom: 180px;
+  background-color: #f4f9ff;
+
+  .bannerBlock {
+    width: $inner-width;
+    margin: auto;
+    display: flex;
+    padding: 24px;
+  }
+
+  .title {
+    @include fs48b;
+  }
+
+  .content {
+    @include fs24;
+    margin-top: 24px;
+  }
+
+  .left {
+    width: 600px;
+    flex: none;
+  }
+
+  .bannerButton {
+    @include bannerBtn;
+  }
+}
+
+.secondBlockWrapper {
+  .block {
+    width: $inner-width;
+    margin: auto;
+    padding: 100px 24px;
+  }
+
+  .blockTitle {
+    @include fs40b;
+    text-align: center;
+  }
+
+  .blockContent {
+    @include fs24;
+    margin-top: 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .circle {
+    position: absolute;
+    left: 230px;
+    top: -7px;
+    width: 323px;
+    z-index: -1;
+  }
+
+  .scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 90px;
+  }
+
+  .profileWrapper {
+    width: 715px;
+    height: 759px;
+    overflow: auto;
+    margin: 112px auto 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .profile {
+      width: 100%;
+    }
+  }
+
+  .createProfileBtn {
+    position: absolute;
+    bottom: 0;
+    left: 112px;
+    right: 112px;
+    height: 75px;
+    text-align: center;
+    padding-top: 25px;
+    color: rgba(0, 122, 255, 1);
+    @include fs16b;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.81) 48.93%,
+      #ffffff 100%
+    );
+  }
+}
+
+.blockWrapper {
+  .block {
+    width: $inner-width;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 100px 24px;
+
+    > div {
+      flex: 1;
+    }
+
+    .right {
+      margin-left: 35px;
+    }
+  }
+
+  .blockTitle {
+    @include fs40b;
+  }
+
+  .blockContent {
+    @include fs24;
+    margin-top: 24px;
+  }
+
+  &.gray {
+    background-color: #f8f8f8;
+  }
+
+  .howItWorkTitle {
+    @include fs24b;
+  }
+
+  .item {
+    @include fs40;
+    margin-top: 80px;
+    width: 830px;
+  }
+}

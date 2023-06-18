@@ -18,17 +18,17 @@ const Header = () => {
       key: 'recruiter',
       children: [
         {
-          name: 'Landd Recruiters',
-          href: '/for_recruiters',
+          name: 'For Recruiters',
+          href: '/recruiters/for_recruiters',
         },
         {
-          name: 'Landd Partners',
-          href: '/for_parteners',
+          name: 'For Employers',
+          href: '/recruiters/for_employers',
         },
-        {
-          name: 'Landd Remote',
-          href: '/employer',
-        },
+        // {
+        //   name: 'Landd Remote',
+        //   href: '/employer',
+        // },
       ],
     },
     {
@@ -36,17 +36,17 @@ const Header = () => {
       key: 'parter',
       children: [
         {
-          name: 'Landd Recruiters',
-          href: '/for_recruiters',
+          name: 'For Parteners',
+          href: '/parteners/for_parteners',
         },
         {
-          name: 'Landd Partners',
-          href: '/for_parteners',
+          name: 'For Employers',
+          href: '/parteners/for_employers',
         },
-        {
-          name: 'Landd Remote',
-          href: '/employer',
-        },
+        // {
+        //   name: 'Landd Remote',
+        //   href: '/employer',
+        // },
       ],
     },
     // {

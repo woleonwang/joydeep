@@ -53,17 +53,11 @@
 }
 
 .bannerButton {
-  width: 295px;
-  height: 64px;
-  border-radius: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 80px;
-  background-color: #007aff;
+  @include bannerBtn;
 }
 
 .block {
-  width: 1200px;
+  width: $inner-width;
   margin: auto;
   display: flex;
   padding: 30px;
