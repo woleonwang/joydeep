@@ -1,7 +1,6 @@
 .banner {
-  padding-top: 270px;
+  padding-top: 240px;
   padding-bottom: 180px;
-  background-color: #f4f9ff;
 
   .bannerBlock {
     width: $inner-width;
@@ -12,6 +11,15 @@
 
   .title {
     @include fs48b;
+    position: relative;
+  }
+
+  .header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    z-index: 1;
   }
 
   .content {
@@ -24,12 +32,17 @@
     flex: none;
   }
 
+  .right {
+    padding-top: 80px;
+  }
+
   .bannerButton {
     @include bannerBtn;
   }
 }
 
 .secondBlockWrapper {
+  background-color: #f8f8f8;
   .block {
     width: $inner-width;
     margin: auto;
@@ -48,49 +61,10 @@
     position: relative;
   }
 
-  .circle {
-    position: absolute;
-    left: 230px;
-    top: -7px;
-    width: 323px;
-    z-index: -1;
-  }
-
-  .scroll {
-    position: absolute;
-    bottom: 40px;
-    right: 90px;
-  }
-
-  .profileWrapper {
-    width: 715px;
-    height: 759px;
-    overflow: auto;
-    margin: 112px auto 0;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    .profile {
-      width: 100%;
-    }
-  }
-
-  .createProfileBtn {
-    position: absolute;
-    bottom: 0;
-    left: 112px;
-    right: 112px;
-    height: 75px;
-    text-align: center;
-    padding-top: 25px;
-    color: rgba(0, 122, 255, 1);
-    @include fs16b;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.81) 48.93%,
-      #ffffff 100%
-    );
+  .profile {
+    display: block;
+    width: 1140px;
+    margin: 30px auto;
   }
 }
 
@@ -107,7 +81,7 @@
     }
 
     .right {
-      margin-left: 35px;
+      margin-left: 130px;
     }
   }
 
@@ -131,7 +105,7 @@
   .item {
     @include fs40;
     margin-top: 80px;
-    width: 830px;
+    width: 534px;
   }
 }
 
