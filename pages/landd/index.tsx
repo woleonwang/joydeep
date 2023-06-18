@@ -76,7 +76,7 @@ const Home = () => {
               private networks with our Landd Partners Network.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_parteners'>
+              <Link href='/for_partners'>
                 <div>
                   Learn more<span className={styles.symbol}>↗</span>
                 </div>

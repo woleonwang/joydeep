@@ -14,7 +14,7 @@ import Image from 'next/image';
 import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
-const ForParteners = () => {
+const ForPartners = () => {
   const howItWorkSteps = [
     'Sign up your account',
     'Submit your application and get approved',
@@ -45,7 +45,7 @@ const ForParteners = () => {
           </div>
           <div className={styles.right}>
             <Image
-              src='/home/parteners/for_parteners/banner.png'
+              src='/home/partners/for_partners/banner.png'
               width={590}
               height={487}
               alt=''
@@ -68,7 +68,7 @@ const ForParteners = () => {
           </div>
           <img
             className={styles.profile}
-            src='/home/parteners/for_parteners/secondBlock.png'
+            src='/home/partners/for_partners/secondBlock.png'
             alt='profile'
           />
         </div>
@@ -78,7 +78,7 @@ const ForParteners = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <Image
-              src='/home/parteners/for_parteners/block3.png'
+              src='/home/partners/for_partners/block3.png'
               width={530}
               height={952}
               alt=''
@@ -118,7 +118,7 @@ const ForParteners = () => {
           </div>
           <div className={styles.right}>
             <Image
-              src='/home/parteners/for_parteners/block4.png'
+              src='/home/partners/for_partners/block4.png'
               width={500}
               height={500}
               alt=''
@@ -131,7 +131,7 @@ const ForParteners = () => {
         <div className={styles.block}>
           <div className={styles.left}>
             <Image
-              src='/home/parteners/for_parteners/block5.png'
+              src='/home/partners/for_partners/block5.png'
               width={451}
               height={472}
               alt=''
@@ -165,7 +165,7 @@ const ForParteners = () => {
           </div>
           <div className={styles.right}>
             <Image
-              src='/home/parteners/for_parteners/block6.png'
+              src='/home/partners/for_partners/block6.png'
               width={546}
               height={371}
               alt=''
@@ -187,6 +187,6 @@ const ForParteners = () => {
   );
 };
 
-ForParteners.layout = UnlogginLayout;
+ForPartners.layout = UnlogginLayout;
 
-export default ForParteners;
+export default ForPartners;

@@ -36,12 +36,12 @@ const Header = () => {
       key: 'parter',
       children: [
         {
-          name: 'For Parteners',
-          href: '/parteners/for_parteners',
+          name: 'For Partners',
+          href: '/partners/for_partners',
         },
         {
           name: 'For Employers',
-          href: '/parteners/for_employers',
+          href: '/partners/for_employers',
         },
         // {
         //   name: 'Landd Remote',

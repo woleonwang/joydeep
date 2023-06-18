@@ -18,7 +18,7 @@ const Header = () => {
     // },
     {
       name: 'For employers',
-      href: '/for_parteners',
+      href: '/for_partners',
     },
     // {
     //   name: 'For candidates',
