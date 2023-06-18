@@ -2,7 +2,7 @@
   padding-top: 270px;
   padding-bottom: 180px;
   background-color: #f4f9ff;
-
+  min-width: $main-width;
   .bannerBlock {
     width: $inner-width;
     margin: auto;
@@ -30,6 +30,7 @@
 }
 
 .secondBlockWrapper {
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;
@@ -95,6 +96,7 @@
 }
 
 .blockWrapper {
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;

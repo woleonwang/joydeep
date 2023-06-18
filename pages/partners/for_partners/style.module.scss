@@ -43,6 +43,7 @@
 
 .secondBlockWrapper {
   background-color: #f8f8f8;
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;
@@ -69,6 +70,7 @@
 }
 
 .blockWrapper {
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;

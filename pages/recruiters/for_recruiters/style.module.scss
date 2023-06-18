@@ -345,14 +345,14 @@
 }
 
 .blockWrapper {
-  min-width: 1440px;
+  min-width: $main-width;
   &.gray {
     background-color: rgba(245, 245, 245, 0.72);
   }
 }
 
 .block {
-  width: 1440px;
+  width: $main-width;
   margin: auto;
   padding: 120px;
   position: relative;

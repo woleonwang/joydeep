@@ -1,13 +1,18 @@
 .banner {
-  padding-top: 270px;
-  padding-bottom: 180px;
-  background-color: #f4f9ff;
+  background-color: #ecedff;
+  min-width: $main-width;
 
   .bannerBlock {
+    padding-top: 270px;
+    padding-bottom: 180px;
     width: $inner-width;
     margin: auto;
-    display: flex;
-    padding: 24px;
+    position: relative;
+  }
+
+  .bannerText {
+    position: relative;
+    text-align: center;
   }
 
   .title {
@@ -19,82 +24,157 @@
     margin-top: 24px;
   }
 
-  .left {
-    width: 600px;
-    flex: none;
+  .purple {
+    color: rgba(112, 0, 255, 1);
   }
 
   .bannerButton {
     @include bannerBtn;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bannerBg {
+    position: absolute;
+    left: -24px;
+    top: 85px;
+    width: 100%;
+  }
+
+  .line {
+    position: absolute;
+    left: 476px;
+    top: 536px;
+    width: 180px;
   }
 }
 
 .secondBlockWrapper {
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;
     padding: 100px 24px;
   }
 
+  .bannerText {
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+  }
+
   .blockTitle {
     @include fs40b;
-    text-align: center;
   }
 
   .blockContent {
     @include fs24;
     margin-top: 24px;
-    text-align: center;
     position: relative;
+    height: 400px;
   }
 
-  .circle {
+  .blockBg {
     position: absolute;
-    left: 230px;
-    top: -7px;
-    width: 323px;
-    z-index: -1;
+    left: -24px;
+    top: 0;
+    width: 100%;
+    z-index: 0;
   }
 
-  .scroll {
+  .line {
     position: absolute;
-    bottom: 40px;
-    right: 90px;
+    left: 164px;
+    top: -25px;
+    width: 320px;
+  }
+}
+
+.themeBlock {
+  &.bg {
+    background-color: #f5f6ff;
+  }
+  .block {
+    padding: 154px 24px 100px;
+    display: block !important;
   }
 
-  .profileWrapper {
-    width: 715px;
-    height: 759px;
-    overflow: auto;
-    margin: 112px auto 0;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    .profile {
-      width: 100%;
-    }
-  }
-
-  .createProfileBtn {
-    position: absolute;
-    bottom: 0;
-    left: 112px;
-    right: 112px;
-    height: 75px;
+  .center {
     text-align: center;
-    padding-top: 25px;
-    color: rgba(0, 122, 255, 1);
-    @include fs16b;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.81) 48.93%,
-      #ffffff 100%
-    );
+
+    img {
+      width: 904px;
+    }
+  }
+
+  .blockContent {
+    margin-top: 40px !important;
+  }
+
+  img {
+    margin-top: 40px;
+    width: 100%;
+  }
+}
+
+.howItWork {
+  background-color: #f5f6ff;
+
+  .howItWorkTitle {
+    @include fs24b;
+  }
+
+  .stepContainer {
+    position: relative;
+
+    img {
+      position: absolute;
+    }
+    .line3 {
+      width: 163px;
+      top: 45px;
+      left: 735px;
+    }
+
+    .line4 {
+      width: 344px;
+      top: 265px;
+      left: 80px;
+    }
+
+    .line5 {
+      width: 178px;
+      top: 570px;
+      left: 665px;
+    }
+  }
+
+  .item {
+    @include fs40;
+    margin-top: 150px;
+
+    &.alignRight {
+      text-align: right;
+    }
+
+    & > div {
+      display: inline-flex;
+    }
+
+    .index {
+      color: rgba(112, 0, 255, 1);
+      @include fs128b;
+    }
+
+    .content {
+      text-align: left;
+      margin-left: 20px;
+    }
   }
 }
 
 .blockWrapper {
+  min-width: $main-width;
   .block {
     width: $inner-width;
     margin: auto;
@@ -122,16 +202,6 @@
 
   &.gray {
     background-color: #f8f8f8;
-  }
-
-  .howItWorkTitle {
-    @include fs24b;
-  }
-
-  .item {
-    @include fs40;
-    margin-top: 80px;
-    width: 830px;
   }
 }
 

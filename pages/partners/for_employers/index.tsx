@@ -9,150 +9,183 @@
 
 import { Button } from 'antd';
 import classnames from 'classnames';
-import Image from 'next/image';
-// import HowItWork from '../../components/HowItWork';
 import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
 const ForEmployers = () => {
-  const howItWorkSteps = [
-    'Tell us what roles you are hiring.',
-    'We match 1-3 suitable recruiters for you.',
-    'Recruiters contact you for further discussions.',
-  ];
-
   return (
     <div>
       <div className={classnames(styles.banner)}>
         <div className={styles.bannerBlock}>
-          <div className={styles.left}>
+          <div className={styles.bannerText}>
             <div className={styles.title}>
-              Work with the best
+              Get access to hard-to-find candidates in exclusive
               <br />
-              recruiters in Singapore.
+              online communities and private networks.
             </div>
             <div className={styles.content}>
-              Landd connects you with the best recruiters in Singapore based on
-              comprehensive recruiter data so your jobs will be worked on by the
-              recruiters who have the highest chance to deliver to it fast.
+              Many high-quality candidates do not use job boards ever, but they
+              can be found in online <br />
+              communities and private networks. Landd helps companies connect
+              with these hard-to-find
+              <br /> candidates through
+              <span className={styles.purple}> Landd Partner’s </span>Curated
+              Talent Pool (CTP).
             </div>
             <Button type='primary' className={styles.bannerButton}>
               {'Start hiring now →'}
             </Button>
           </div>
-          <div className={styles.right}>
-            <Image
-              src='/home/recruiters/for_employers/banner.png'
-              width={590}
-              height={487}
-              alt=''
-            />
-          </div>
+          <img
+            src='/home/partners/for_employers/banner.png'
+            alt=''
+            className={styles.bannerBg}
+          />
+          <img
+            src='/home/partners/for_employers/line1.png'
+            alt=''
+            className={styles.line}
+          />
         </div>
       </div>
 
       <div className={classnames(styles.secondBlockWrapper)}>
         <div className={styles.block}>
-          <div className={styles.blockTitle}>Deep recruiter profile</div>
+          <div className={styles.blockTitle}>Who are Landd Partners?</div>
           <div className={styles.blockContent}>
-            You get a transparent and deep understanding of our recruiters’ true
+            <div className={styles.bannerText}>
+              Landd Partners are tech writers/software engineers/
+              <br />
+              marketers/sales/etc and whoever has a wide reach to
+              <br />
+              potential candidates through their online
+              <br />
+              presence(social media, newsletter, chat groups, etc) or
+              <br />
+              their own private networks built over years.
+            </div>
+            <img
+              src='/home/partners/for_employers/secondBlockBg.png'
+              alt=''
+              className={styles.blockBg}
+            />
+            <img
+              src='/home/partners/for_employers/line2.png'
+              alt=''
+              className={styles.line}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={classnames(
+          styles.blockWrapper,
+          styles.themeBlock,
+          styles.bg
+        )}
+      >
+        <div className={styles.block}>
+          <div className={styles.blockTitle}>
+            What is a Curated Talent Pool (CTP)?
+          </div>
+          <div className={styles.blockContent}>
+            A CTP is a collection of candidates curated by Landd Partners.
+            Candidate usually need to meet certain criteria in order to be
+            included in a CTP.
+          </div>
+          <img src='/home/partners/for_employers/bg3.png' alt='' />
+        </div>
+      </div>
+
+      <div className={classnames(styles.blockWrapper, styles.themeBlock)}>
+        <div className={classnames(styles.block, styles.center)}>
+          <div className={styles.blockTitle}>
+            Extra confidence on candidate quality
+          </div>
+          <div className={styles.blockContent}>
+            Landd Partners are engineers, marketers, sales people themselves.
+            When they
             <br />
-            capabilities from our deep recruiter profile.
-            <img
-              className={styles.circle}
-              src='/home/recruiters/for_employers/circle.png'
-              alt=''
-            />
-            <div className={styles.profileWrapper}>
-              <img
-                className={styles.profile}
-                src='/freelancer/profile.jpg'
-                alt='profile'
-              />
-              <div className={styles.createProfileBtn}>
-                Create your profile now
-              </div>
-            </div>
-            <img
-              className={styles.scroll}
-              src='/freelancer/scroll.svg'
-              alt='scroll'
-            />
+            recommend a candidate, you get extra confidence on the candidate’s
+            quality.
           </div>
+          <img src='/home/partners/for_employers/bg4.png' alt='' />
         </div>
       </div>
 
       <div className={classnames(styles.blockWrapper, styles.gray)}>
         <div className={styles.block}>
-          <div className={styles.left}>
-            <Image
-              src='/home/recruiters/for_employers/block1.png'
-              width={495}
-              height={470}
-              alt=''
-            />
-          </div>
-          <div className={styles.right}>
-            <div className={styles.blockTitle}>Data-driven matching</div>
-            <div className={styles.blockContent}>
-              Landd matches your jobs with the recruiters who have the highest
-              chance of delivering to your roles based on their candidate pool
-              and historical placement data.
-            </div>
-          </div>
+          <img
+            src='/home/partners/for_employers/bg5.png'
+            alt=''
+            style={{ width: '100%' }}
+          />
         </div>
       </div>
 
-      <div className={classnames(styles.blockWrapper)}>
-        <div className={styles.block}>
-          <div className={styles.left}>
-            <div className={styles.blockTitle}>Years of experience</div>
-            <div className={styles.blockContent}>
-              All of Landd’s recruiters have years of experience in the
-              recruitment industry
-            </div>
-          </div>
-          <div className={styles.right}>
-            <Image
-              src='/home/recruiters/for_employers/block2.png'
-              width={550}
-              height={340}
-              alt=''
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={classnames(styles.blockWrapper, styles.gray)}>
-        <div className={styles.block}>
-          <div className={styles.left}>
-            <Image
-              src='/home/recruiters/for_employers/block3.png'
-              width={490}
-              height={438}
-              alt=''
-            />
-          </div>
-          <div className={styles.right}>
-            <div className={styles.blockTitle}>Highly motivated</div>
-            <div className={styles.blockContent}>
-              Landd pays an unparalleled high commission rate to our recruiters
-              so they are highly motivated to deliver on your roles
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={classnames(styles.blockWrapper)}>
+      <div className={classnames(styles.blockWrapper, styles.howItWork)}>
         <div className={styles.block}>
           <div>
             <div className={styles.howItWorkTitle}>How does it work?</div>
             <div className={styles.stepContainer}>
-              {howItWorkSteps.map((step, index) => (
-                <div key={index} className={styles.item}>
-                  {index + 1}.{step}
+              <div className={styles.item}>
+                <div>
+                  <div className={styles.index}>1</div>
+                  <div className={styles.content}>
+                    Tell Landd your hiring needs by
+                    <br />
+                    filling up the questionnaire
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div className={classnames(styles.item, styles.alignRight)}>
+                <div>
+                  <div className={styles.index}>2</div>
+                  <div className={styles.content}>
+                    We work with Landd Partners to
+                    <br />
+                    produce a shortlist of suitable
+                    <br />
+                    candidates
+                  </div>
+                </div>
+              </div>
+              <div className={styles.item}>
+                <div>
+                  <div className={styles.index}>3</div>
+                  <div className={styles.content}>
+                    You interview the candidates
+                  </div>
+                </div>
+              </div>
+              <div className={classnames(styles.item, styles.alignRight)}>
+                <div>
+                  <div className={styles.index}>4</div>
+                  <div className={styles.content}>
+                    We help you negotiate the
+                    <br />
+                    offers and onboard the
+                    <br />
+                    candidates
+                  </div>
+                </div>
+              </div>
+              <img
+                src='/home/partners/for_employers/line3.png'
+                alt=''
+                className={styles.line3}
+              />
+              <img
+                src='/home/partners/for_employers/line4.png'
+                alt=''
+                className={styles.line4}
+              />
+              <img
+                src='/home/partners/for_employers/line5.png'
+                alt=''
+                className={styles.line5}
+              />
             </div>
           </div>
         </div>
