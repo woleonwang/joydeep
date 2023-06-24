@@ -33,7 +33,7 @@ import { formatNumber } from 'utils/helper';
 import RecruiterTrackRecord from './components/RecruiterTrackRecord';
 import CandidateResources from './components/CandidateResources';
 import Endorsements from './components/Endorsements';
-import mockData from './mock';
+import mockData from 'utils/mock';
 import Publications from './components/Publications';
 
 const ProfilePrevew = () => {
