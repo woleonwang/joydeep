@@ -1,0 +1,54 @@
+@import '../style.module.scss';
+.wrapper {
+  @include wrapper;
+  .title {
+    background-color: rgba(240, 154, 52, 1);
+  }
+
+  .main {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.jobsCol {
+  flex: 1;
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.jobsItem {
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  padding: 50px 50px;
+
+  .jobTitle {
+    @include fs32b;
+  }
+
+  .company {
+    @include fs24;
+    margin-top: 15px;
+  }
+
+  .content {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $gray-border;
+    @include fs24;
+  }
+}
+
+.btnWrapper {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.btn {
+  width: 320px;
+  height: 64px;
+  border-radius: 32px;
+  @include fs20b;
+}

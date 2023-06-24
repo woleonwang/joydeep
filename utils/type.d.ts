@@ -115,7 +115,13 @@ interface IPublications {
 }
 
 interface IFeaturedJobs {
-  jobs: { title: string; company: string; description: string }[];
+  jobs: IFeatureedJobItem[];
+}
+
+interface IFeatureedJobItem {
+  title: string;
+  company: string;
+  description: string;
 }
 
 interface IComment {
