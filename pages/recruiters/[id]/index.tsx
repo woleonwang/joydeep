@@ -34,6 +34,7 @@ import RecruiterTrackRecord from './components/RecruiterTrackRecord';
 import CandidateResources from './components/CandidateResources';
 import Endorsements from './components/Endorsements';
 import mockData from './mock';
+import Publications from './components/Publications';
 
 const ProfilePrevew = () => {
   const [profile, setProfile] = useState<Partial<IRecruiterProfile>>();
@@ -83,6 +84,7 @@ const ProfilePrevew = () => {
         <RecruiterTrackRecord trackRecords={trackRecords} />
         <CandidateResources candidates={candidates} />
         <Endorsements endorsements={endorsements} currentName='Eric' />
+        <Publications publications={publications} />
       </div>
     </div>
   ) : (

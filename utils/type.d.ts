@@ -111,10 +111,19 @@ interface IPublications {
     timestamp: string;
     content: string;
   }[];
+  comments: IComment[];
 }
 
 interface IFeaturedJobs {
   jobs: { title: string; company: string; description: string }[];
+}
+
+interface IComment {
+  avatar: string;
+  name: string;
+  company: string;
+  content: string;
+  date: string;
 }
 interface IRecruiterProfile {
   basicInfo: IBasicInfo;

@@ -1,0 +1,111 @@
+@import '../style.module.scss';
+.wrapper {
+  @include wrapper;
+  .title {
+    background-color: rgba(240, 154, 52, 1);
+  }
+
+  .main {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+}
+
+.endorsementsBtn {
+  width: 113px;
+  border-radius: 28px;
+  border: 1px solid rgba(230, 230, 230, 1);
+  color: rgba(147, 147, 147, 1);
+  @include fs18b;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 15px;
+  }
+  &.selected {
+    background-color: rgba(0, 122, 255, 1);
+    color: white;
+  }
+}
+
+.endorsementsCol {
+  flex: 1;
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.endorsementsItem {
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  padding: 50px 50px 25px;
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    flex: none;
+  }
+
+  .info {
+    margin-left: 12px;
+  }
+
+  .firstRow {
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    @include fs24;
+  }
+
+  .company {
+    @include fs20;
+    color: rgba(147, 147, 147, 1);
+    margin-left: 5px;
+  }
+
+  .date {
+    color: rgba(147, 147, 147, 1);
+    @include fs16;
+  }
+
+  .content {
+    margin-top: 28px;
+    @include fs24b;
+  }
+
+  .hint {
+    margin-top: 16px;
+    padding-top: 16px;
+    color: rgba(147, 147, 147, 1);
+    border-top: 1px solid rgba(231, 231, 231, 1);
+  }
+}
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  .footerBtn {
+    padding: 15px 40px;
+    color: rgba(0, 122, 255, 1);
+    border: 3px solid rgba(0, 122, 255, 1);
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    @include fs24b;
+  }
+}

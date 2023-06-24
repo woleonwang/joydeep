@@ -1,0 +1,91 @@
+@import '../style.module.scss';
+.wrapper {
+  @include wrapper;
+  .title {
+    background-color: rgba(52, 172, 240, 1);
+  }
+
+  .main {
+    background-color: white;
+    padding: 50px;
+  }
+}
+
+.item {
+  border-bottom: 1px solid $gray-border;
+  padding-top: 20px;
+  min-height: 114px;
+
+  .date {
+    color: $gray-text;
+    @include fs14;
+  }
+  .desc {
+    @include fs20;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  margin-top: 20px;
+}
+
+.commentsCol {
+  flex: 1;
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.commentsItem {
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  padding: 50px 50px 25px;
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    flex: none;
+  }
+
+  .info {
+    margin-left: 12px;
+  }
+
+  .firstRow {
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    @include fs24b;
+  }
+
+  .company {
+    @include fs20;
+    color: rgba(147, 147, 147, 1);
+  }
+
+  .date {
+    color: rgba(147, 147, 147, 1);
+    @include fs16;
+  }
+
+  .content {
+    margin-top: 28px;
+    @include fs24;
+  }
+
+  .hint {
+    margin-top: 16px;
+    padding-top: 16px;
+    color: rgba(147, 147, 147, 1);
+  }
+}
