@@ -107,6 +107,12 @@
   font-family: SpaceGrotest-Bold;
 }
 
+@mixin fs64b {
+  font-size: 64px;
+  line-height: 96px;
+  font-family: SpaceGrotest-Bold;
+}
+
 @mixin fs128b {
   font-size: 128px;
   line-height: 100px;

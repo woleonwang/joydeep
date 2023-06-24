@@ -1,0 +1,23 @@
+.header {
+  min-width: $main-width;
+  background-color: white;
+}
+
+.inner {
+  width: $main-width;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+}
+
+.container {
+  background-color: rgba(237, 237, 237, 1);
+  min-width: $main-width;
+  .innerContainer {
+    width: $main-width;
+    padding: 32px;
+    margin: auto;
+  }
+}

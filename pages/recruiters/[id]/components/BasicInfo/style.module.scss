@@ -1,0 +1,118 @@
+.basicInfo {
+  padding: 35px 50px;
+  background-color: white;
+  margin-top: 115px;
+  .summary {
+    display: flex;
+  }
+
+  .left {
+    flex: 1;
+    position: relative;
+    .head {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: -100px;
+    }
+
+    img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 8px solid white;
+      background-color: white;
+      box-shadow: 0px 8px 20px 0px rgba(142, 142, 142, 0.2);
+    }
+
+    .name {
+      margin-left: 30px;
+      @include fs64b;
+    }
+
+    .btn {
+      width: 164px;
+      height: 54px;
+      margin-left: auto;
+      border-radius: 27px;
+      @include fs16b;
+    }
+
+    .selfIntro {
+      margin-top: -65px;
+      @include fs24;
+    }
+  }
+
+  .right {
+    width: 380px;
+    flex: none;
+    padding-left: 45px;
+    margin-left: 30px;
+    border-left: 1px solid rgba(231, 231, 231, 1);
+
+    .row {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .icon {
+      @include fs24;
+      margin-right: 15px;
+    }
+
+    .label {
+      @include fs24b;
+    }
+
+    .content {
+      margin-top: 6px;
+      @include fs24;
+    }
+  }
+
+  .expertiseContainer {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .expertise {
+    border-radius: 16px;
+    border: 1px solid rgba(237, 237, 237, 1);
+    margin-right: 15px;
+    z-index: 1;
+    position: relative;
+    background-color: white;
+    padding: 30px 40px;
+  }
+
+  .shadow {
+    position: absolute;
+    left: 15px;
+    right: 0;
+    top: 15px;
+    height: 100%;
+    border-radius: 16px;
+    z-index: 0;
+    background-color: rgba(248, 248, 248, 1);
+  }
+
+  .title {
+    color: rgba(0, 122, 255, 1);
+    @include fs32b;
+  }
+
+  .tagContainer {
+    margin-top: 35px;
+  }
+
+  .tag {
+    display: inline-block;
+    @include fs20;
+    background-color: rgba(243, 249, 255, 1);
+    padding: 0 15px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+}

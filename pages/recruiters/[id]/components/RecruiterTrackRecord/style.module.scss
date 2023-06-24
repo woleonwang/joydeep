@@ -1,0 +1,73 @@
+@import '../style.module.scss';
+.wrapper {
+  @include wrapper;
+  .title {
+    background-color: rgba(101, 98, 207, 1);
+  }
+
+  .main {
+    background-color: white;
+    padding: 100px 50px;
+  }
+}
+
+.summary {
+  display: flex;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(231, 231, 231, 1);
+  .summaryBlock {
+    margin-right: 50px;
+    border-radius: 32px;
+    padding: 40px 50px;
+    &:first-child {
+      background-color: rgba(208, 250, 247, 1);
+    }
+
+    &:nth-child(2) {
+      background-color: rgba(250, 238, 208, 1);
+    }
+  }
+
+  .summaryTitle {
+    @include fs24;
+  }
+
+  .summaryValue {
+    @include fs48b;
+  }
+}
+
+.placement {
+  padding: 40px 0;
+
+  .placementTitle {
+    @include fs24b;
+  }
+
+  .placementContainer {
+    margin-top: 20px;
+  }
+
+  .item {
+    padding: 25px 15px;
+    background-color: rgba(245, 245, 245, 1);
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .date {
+    @include fs16;
+    color: rgba(147, 147, 147, 1);
+  }
+
+  .desc {
+    @include fs20b;
+  }
+
+  .placementHint {
+    margin-top: 15px;
+    text-align: right;
+    color: rgba(49, 53, 56, 0.6);
+    @include fs16;
+  }
+}
