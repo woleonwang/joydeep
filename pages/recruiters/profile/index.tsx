@@ -1,7 +1,9 @@
 import RecruiterLogginLayout from 'components/layouts/RecruiterLogginLayout';
 import RecruiterSidebarLayout from 'components/layouts/RecruiterSidebarLayout';
 import { useState, useEffect } from 'react';
-import { Form, Input, Select } from 'antd';
+import { Form, Input, Select, Tabs, TabsProps } from 'antd';
+import styles from './style.module.scss';
+import Basic from './components/Basic';
 
 interface IProps {
   propName: string;
@@ -13,7 +15,33 @@ const Profile = (props: IProps) => {
 
   const [state, setState] = useState();
 
-  const [form] = useForm();
+  const items: TabsProps['items'] = [
+    {
+      key: 'basic',
+      label: `Basic Info`,
+      children: <Basic />,
+    },
+    {
+      key: 'placements',
+      label: `Total career placements`,
+      children: `Content of Tab Pane 2`,
+    },
+    {
+      key: 'jobs',
+      label: `Featured jobs`,
+      children: `Content of Tab Pane 3`,
+    },
+    {
+      key: 'resources',
+      label: `Candidate resources`,
+      children: `Content of Tab Pane 4`,
+    },
+    {
+      key: 'publications',
+      label: `Publications`,
+      children: `Content of Tab Pane 5`,
+    },
+  ];
 
   useEffect(() => {
     fetchData();
@@ -23,42 +51,13 @@ const Profile = (props: IProps) => {
 
   return (
     <RecruiterSidebarLayout activeMenu='profile'>
-      <Form form={form} layout='vertical'>
-        <div>Basic info</div>
-        <Item
-          label='Name'
-          name='name'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Item>
-        <Item
-          label='Personal summary'
-          name='summary'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input.TextArea />
-        </Item>
-        <Item
-          label='Total years of professional recruiter experience'
-          name='experience'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Select />
-        </Item>
-      </Form>
+      <div className={styles.main}>
+        <Tabs
+          defaultActiveKey='basic'
+          tabBarStyle={{ color: 'rgba(0, 0, 0, 0.4)' }}
+          items={items}
+        />
+      </div>
     </RecruiterSidebarLayout>
   );
 };

@@ -34,6 +34,11 @@ const RecruiterSidebarLayout = (props: IProps) => {
       </div>
 
       <div className={styles.right}>
+        <div className={styles.breadcrumb}>
+          <div>icon</div>
+          <div>Dashboards</div>
+          <div>/{activeMenu}</div>
+        </div>
         <div className={styles.innerConainer}>{children}</div>
       </div>
     </div>

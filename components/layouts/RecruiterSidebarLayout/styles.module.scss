@@ -29,7 +29,13 @@
 }
 
 .innerConainer {
-  width: 720px;
+  width: 900px;
   padding: 0 10px;
-  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 22px 28px;
+  border-bottom: 1px solid $gray-border;
 }

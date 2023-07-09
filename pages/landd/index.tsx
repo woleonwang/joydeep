@@ -61,7 +61,7 @@ const Home = () => {
               based on years of authentic recruitment data.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_recruiters'>
+              <Link href='/recruiters/for_recruiters'>
                 <div>
                   Learn more<span className={styles.symbol}>↗</span>
                 </div>
@@ -76,7 +76,7 @@ const Home = () => {
               private networks with our Landd Partners Network.
             </div>
             <div className={styles.learnMore}>
-              <Link href='/for_partners'>
+              <Link href='/recruiters/for_partners'>
                 <div>
                   Learn more<span className={styles.symbol}>↗</span>
                 </div>

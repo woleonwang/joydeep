@@ -103,13 +103,17 @@ const Header = () => {
           })}
         </div>
         <div>
-          <Button type='primary' className={styles.signUpBtn}>
-            Sign up →
-          </Button>
+          <Link href='/recruiters/sign_up'>
+            <Button type='primary' className={styles.signUpBtn}>
+              Start hiring now →
+            </Button>
+          </Link>
 
-          <Button type='default' className={styles.logInBtn}>
-            Log in →
-          </Button>
+          <Link href='/contact'>
+            <Button type='default' className={styles.logInBtn}>
+              Contact us →
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@
 
 import { Button } from 'antd';
 import classnames from 'classnames';
+import Link from 'next/link';
 import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
 
@@ -241,7 +242,11 @@ const ForRecruiters = () => {
               when to work, who to work with, on what terms, and retain 90% of
               the recruitment fees paid by employers.
             </div>
-            <Button className={styles.buildButton}>Learn more →</Button>
+            <Link href='/recruiters/for_employers'>
+              <a>
+                <Button className={styles.buildButton}>Learn more →</Button>
+              </a>
+            </Link>
           </div>
           <img
             className={styles.buildImg}

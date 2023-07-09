@@ -1,0 +1,20 @@
+.main {
+  :global {
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: rgba(28, 28, 28, 1);
+    }
+
+    .ant-tabs-tab:hover {
+      color: rgba(28, 28, 28, 1);
+    }
+
+    .ant-tabs-tab-btn:active,
+    .ant-tabs-tab-btn:focus {
+      color: rgba(28, 28, 28, 1);
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: rgba(28, 28, 28, 1);
+    }
+  }
+}
