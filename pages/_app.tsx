@@ -14,6 +14,7 @@ import DefaultLayout from '../components/layouts/DefaultLayout';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import EmptyLayout from 'components/layouts/EmptyLayout';
+import context from 'context/context';
 
 type NextPageWithLayout = NextPage & {
   layout?: Component;
@@ -32,11 +33,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     <></>
   ) : (
     <ConfigProvider locale={zhCN}>
-      <DefaultLayout>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </DefaultLayout>
+      <context.ContextWrapper>
+        <DefaultLayout>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </DefaultLayout>
+      </context.ContextWrapper>
     </ConfigProvider>
   );
 }

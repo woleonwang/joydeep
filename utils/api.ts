@@ -48,9 +48,9 @@ const api: ApiConfig = {
   },
 
   recruiters: {
-    sendCode: '/recruiters/send_verification_code',
-    signUp: '/recruiters/sign_up',
-    signIn: '/recruiters/sign_in_by_code',
+    signUp: '/sign_up',
+    signIn: '/login',
+    profile: '/recruiter/profile/:id',
   },
 };
 

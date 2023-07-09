@@ -8,6 +8,8 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import router from 'next/router';
+import { getStorage } from 'utils/helper';
+import context from 'context/context';
 
 interface IProps {
   children: ReactNode;
@@ -15,13 +17,15 @@ interface IProps {
 
 const RecruiterLogginLayout = ({ children }: IProps) => {
   const [pending, setPending] = useState(true);
+  const { setUserInfo } = context.useGlobalContext();
 
   useEffect(() => {
-    const token = localStorage.getItem('recruiter_token');
-    if (!token) {
-      router.push('/recruiters/sign_in');
-    } else {
+    const userInfo = getStorage('userinfo');
+    if (userInfo) {
+      setUserInfo(getStorage('userinfo'));
       setPending(false);
+    } else {
+      router.push('/recruiters/sign_in');
     }
   }, []);
 

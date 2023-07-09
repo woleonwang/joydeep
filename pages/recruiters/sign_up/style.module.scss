@@ -6,73 +6,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(247, 249, 251, 1);
 }
 
-.innerContent {
-  width: $main-width;
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
   display: flex;
-  align-items: center;
-  .left {
-    width: 624px;
-    flex: none;
-    position: relative;
+  justify-content: space-between;
+  padding: 32px;
+}
 
-    .fakeLogo {
-      z-index: 1;
-      position: absolute;
-      right: 30px;
-      top: 30px;
-      width: 200px;
-      height: 50px;
-      cursor: pointer;
-    }
+.main {
+  width: 560px;
+  padding: 100px 85px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 24px;
+  @include fs24b;
+}
+
+.inputWrapper {
+  margin-top: 16px;
+  & > input {
+    border-radius: 8px;
   }
+}
 
-  .right {
-    flex: 1;
-    margin-left: 96px;
-    .title {
-      @include fs40b;
-    }
+.mainBtn {
+  width: 100%;
+  margin-top: 24px;
+}
 
-    .subTitle {
-      margin-top: 32px;
-      @include fs16;
-    }
+.hint {
+  margin-top: 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+}
 
-    .inputWrapper {
-      width: 400px;
-      margin-top: 16px;
-      box-shadow: 0px 2px 0px rgba(31, 31, 31, 0.32);
-    }
-
-    :global {
-      .ant-input {
-        padding: 0;
-        font-size: 50px;
-      }
-    }
-
-    .blackBtn {
-      @include blackBtn;
-      margin-top: 32px;
-
-      &.disabled {
-        @include blackBtnDisabled;
-      }
-    }
-
-    .blackGhostBtn {
-      @include blackGhostBtn;
-      margin-right: 18px;
-
-      &.disabled {
-        @include blackGhostBtnDisabled;
-      }
-    }
-
-    .inputContainer {
-      margin-top: 16px;
-    }
-  }
+.link {
+  color: rgba(0, 122, 255, 1);
 }

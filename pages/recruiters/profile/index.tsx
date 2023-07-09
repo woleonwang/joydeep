@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { Form, Input, Select, Tabs, TabsProps } from 'antd';
 import styles from './style.module.scss';
 import Basic from './components/Basic';
+import request from 'utils/request';
+import context from 'context/context';
 
 interface IProps {
   propName: string;
@@ -14,6 +16,8 @@ const Profile = (props: IProps) => {
   const { propName } = props;
 
   const [state, setState] = useState();
+
+  const { userInfo } = context.useGlobalContext();
 
   const items: TabsProps['items'] = [
     {
@@ -47,7 +51,13 @@ const Profile = (props: IProps) => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {};
+  const fetchData = async () => {
+    const resp = await request.get('recruiters.profile', {
+      placeholder: {
+        id: `${userInfo.userId}`,
+      },
+    });
+  };
 
   return (
     <RecruiterSidebarLayout activeMenu='profile'>

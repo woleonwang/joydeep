@@ -35,9 +35,6 @@ const request = {
       const { placeholder, ...restParam } = params || {};
       const response = await axios.get(getUrl(path, placeholder), {
         params: restParam,
-        headers: {
-          Authorization: localStorage.getItem('token') || '',
-        },
       });
       return response.data;
     } catch (e: any) {
@@ -47,11 +44,7 @@ const request = {
   post: async (path: string, data?: any): Promise<any> => {
     try {
       const { placeholder, ...restData } = data;
-      const response = await axios.post(getUrl(path, placeholder), restData, {
-        headers: {
-          Authorization: localStorage.getItem('token') || '',
-        },
-      });
+      const response = await axios.post(getUrl(path, placeholder), restData);
       return response.data;
     } catch (e: any) {
       return e.response?.data || {};
