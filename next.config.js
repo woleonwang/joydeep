@@ -10,7 +10,7 @@
 const Host =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8080'
-    : 'http://47.100.196.229';
+    : 'http://47.245.96.254';
 
 const nextConfig = {
   reactStrictMode: true,
