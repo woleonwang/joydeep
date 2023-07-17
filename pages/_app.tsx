@@ -12,9 +12,9 @@ import type { NextPage } from 'next';
 import type { Component } from 'react';
 import DefaultLayout from '../components/layouts/DefaultLayout';
 import { ConfigProvider } from 'antd';
-import zhCN from 'antd/lib/locale/zh_CN';
 import EmptyLayout from 'components/layouts/EmptyLayout';
 import context from 'context/context';
+import enUS from 'antd/lib/locale/en_US';
 
 type NextPageWithLayout = NextPage & {
   layout?: Component;
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return typeof window === 'undefined' ? (
     <></>
   ) : (
-    <ConfigProvider locale={zhCN}>
+    <ConfigProvider locale={enUS}>
       <context.ContextWrapper>
         <DefaultLayout>
           <Layout>

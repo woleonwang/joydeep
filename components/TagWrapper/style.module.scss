@@ -1,0 +1,59 @@
+:global(.ant-form-item-has-error) {
+  .inputWrapper {
+    border: 1px solid #ff4d4f;
+  }
+}
+
+.inputWrapper {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+
+  :global(.ant-input-status-error) {
+    border-color: #40a9ff !important;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+  }
+
+  :global(.ant-input-status-error:focus, .ant-input-status-error:hover) {
+    border-color: #40a9ff !important;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+  }
+
+  input {
+    padding: 0;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 8px;
+  }
+}
+
+.inputLabel {
+  color: rgba(0, 0, 0, 0.4);
+  @include fs12;
+}
+
+.tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  .tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(229, 236, 246, 1);
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 0 4px;
+    margin-top: 10px;
+    &.add {
+      color: white;
+      background-color: rgba(28, 28, 28, 1);
+      cursor: pointer;
+    }
+  }
+
+  .deleteIcon {
+    margin-left: 4px;
+    color: $gray-text;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,20 @@
+:global(.ant-form-item-has-error) {
+  .inputWrapper {
+    border: 1px solid #ff4d4f;
+  }
+}
+
+.inputWrapper {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+
+  :global(.ant-select-selector) {
+    padding: 0 !important;
+  }
+}
+
+.inputLabel {
+  color: rgba(0, 0, 0, 0.4);
+  @include fs12;
+}
