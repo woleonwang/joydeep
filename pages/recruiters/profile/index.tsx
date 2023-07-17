@@ -6,6 +6,7 @@ import styles from './style.module.scss';
 import Basic from './components/Basic';
 import request from 'utils/request';
 import context from 'context/context';
+import Placements from './components/Placements';
 
 interface IProps {
   propName: string;
@@ -28,7 +29,7 @@ const Profile = (props: IProps) => {
     {
       key: 'placements',
       label: `Total career placements`,
-      children: `Content of Tab Pane 2`,
+      children: <Placements />,
     },
     {
       key: 'jobs',
