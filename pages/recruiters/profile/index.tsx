@@ -1,13 +1,14 @@
 import RecruiterLogginLayout from 'components/layouts/RecruiterLogginLayout';
 import RecruiterSidebarLayout from 'components/layouts/RecruiterSidebarLayout';
 import { useState, useEffect } from 'react';
-import { Form, Input, Select, Tabs, TabsProps } from 'antd';
+import { Form, Tabs, TabsProps } from 'antd';
 import styles from './style.module.scss';
 import Basic from './components/Basic';
 import request from 'utils/request';
 import context from 'context/context';
 import Placements from './components/Placements';
 import Jobs from './components/Jobs';
+import Candidates from './components/Candidates';
 
 interface IProps {
   propName: string;
@@ -40,7 +41,7 @@ const Profile = (props: IProps) => {
     {
       key: 'resources',
       label: `Candidate resources`,
-      children: `Content of Tab Pane 4`,
+      children: <Candidates />,
     },
     {
       key: 'publications',
