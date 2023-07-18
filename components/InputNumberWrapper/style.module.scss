@@ -11,6 +11,10 @@
   input {
     padding: 0;
   }
+
+  :global(.ant-input-number) {
+    width: 100%;
+  }
 }
 
 .inputLabel {

@@ -11,12 +11,7 @@ const InputWrapper = ({ label, value, onChange }: IProps) => {
   return (
     <div className={styles.inputWrapper}>
       <div className={styles.inputLabel}>{label}</div>
-      <InputNumber
-        width='100%'
-        bordered={false}
-        value={value}
-        onChange={onChange}
-      />
+      <InputNumber bordered={false} value={value} onChange={onChange} />
     </div>
   );
 };
