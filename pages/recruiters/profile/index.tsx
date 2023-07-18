@@ -9,17 +9,9 @@ import context from 'context/context';
 import Placements from './components/Placements';
 import Jobs from './components/Jobs';
 import Candidates from './components/Candidates';
+import Publications from './components/Publications';
 
-interface IProps {
-  propName: string;
-}
-
-const { useForm, Item } = Form;
-const Profile = (props: IProps) => {
-  const { propName } = props;
-
-  const [state, setState] = useState();
-
+const Profile = () => {
   const { userInfo } = context.useGlobalContext();
 
   const items: TabsProps['items'] = [
@@ -46,7 +38,7 @@ const Profile = (props: IProps) => {
     {
       key: 'publications',
       label: `Publications`,
-      children: `Content of Tab Pane 5`,
+      children: <Publications />,
     },
   ];
 
