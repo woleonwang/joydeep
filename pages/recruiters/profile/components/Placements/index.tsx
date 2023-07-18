@@ -17,7 +17,12 @@ const Placements = () => {
 
   useEffect(() => {
     // form.validateFields();
+    fetchData();
   }, []);
+
+  const fetchData = () => {
+    form.setFieldValue('placements', [{}]);
+  };
 
   return (
     <Form form={form} layout='vertical' className={styles.form}>

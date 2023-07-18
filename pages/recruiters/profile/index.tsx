@@ -7,6 +7,7 @@ import Basic from './components/Basic';
 import request from 'utils/request';
 import context from 'context/context';
 import Placements from './components/Placements';
+import Jobs from './components/Jobs';
 
 interface IProps {
   propName: string;
@@ -34,7 +35,7 @@ const Profile = (props: IProps) => {
     {
       key: 'jobs',
       label: `Featured jobs`,
-      children: `Content of Tab Pane 3`,
+      children: <Jobs />,
     },
     {
       key: 'resources',
