@@ -55,3 +55,20 @@ a {
 .ant-btn {
   border-radius: 6px;
 }
+
+.blackBtn {
+  background-color: rgba(28, 28, 28, 1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.saveFooter {
+  border-top: 1px solid rgba(231, 231, 231, 1);
+  border-bottom: 1px solid rgba(231, 231, 231, 1);
+  padding: 18px;
+  margin-top: 30px;
+}

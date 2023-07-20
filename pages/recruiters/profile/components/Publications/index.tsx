@@ -65,6 +65,9 @@ const Publications = () => {
           </>
         )}
       </List>
+      <div className='saveFooter'>
+        <div className='blackBtn'>Save Changes</div>
+      </div>
     </Form>
   );
 };

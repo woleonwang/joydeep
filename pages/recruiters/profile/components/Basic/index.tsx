@@ -81,6 +81,9 @@ const Basic = () => {
       >
         <TagWrapper label='Area of expertise' />
       </Item>
+      <div className='saveFooter'>
+        <div className='blackBtn'>Save Changes</div>
+      </div>
     </Form>
   );
 };
