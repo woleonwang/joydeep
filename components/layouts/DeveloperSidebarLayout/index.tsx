@@ -68,7 +68,7 @@ const DeveloperSidebarLayout = (props: IProps) => {
       </div>
 
       <div className={styles.right}>
-        <div className={styles.innerConainer}>
+        <div className={styles.innerContainer}>
           {isDeveloper && showHeader && activeKey && (
             <Header activeKey={activeKey} locale={locale} />
           )}

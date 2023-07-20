@@ -39,7 +39,7 @@ const RecruiterSidebarLayout = (props: IProps) => {
           <div>Dashboards</div>
           <div>/{activeMenu}</div>
         </div>
-        <div className={styles.innerConainer}>{children}</div>
+        <div className={styles.innerContainer}>{children}</div>
       </div>
     </div>
   );

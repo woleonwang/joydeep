@@ -1,64 +1,54 @@
 import RecruiterLogginLayout from 'components/layouts/RecruiterLogginLayout';
 import RecruiterSidebarLayout from 'components/layouts/RecruiterSidebarLayout';
 import { useState, useEffect } from 'react';
-import { Form, Input, Select } from 'antd';
+import { Form, Tabs, TabsProps } from 'antd';
+import request from 'utils/request';
+import context from 'context/context';
+import styles from './style.module.scss';
+import PublishedEndorsements from './components/PublishedEndorsements';
 
-interface IProps {
-  propName: string;
-}
+const Endorsements = () => {
+  const { userInfo } = context.useGlobalContext();
 
-const { useForm, Item } = Form;
-const Endorsements = (props: IProps) => {
-  const { propName } = props;
-
-  const [state, setState] = useState();
-
-  const [form] = useForm();
+  const items: TabsProps['items'] = [
+    {
+      key: 'published',
+      label: `Published endorsements`,
+      children: <PublishedEndorsements />,
+    },
+    {
+      key: 'form',
+      label: `Endorsement gathering form`,
+      // children: <GatheringForm />,
+    },
+    {
+      key: 'received',
+      label: `Endorsements received`,
+      // children: <ReceivedEndorsements />,
+    },
+  ];
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {};
+  const fetchData = async () => {
+    const resp = await request.get('recruiters.profile', {
+      placeholder: {
+        id: `${userInfo.userId}`,
+      },
+    });
+  };
 
   return (
     <RecruiterSidebarLayout activeMenu='endorsements'>
-      <Form form={form} layout='vertical'>
-        <div>Basic info</div>
-        <Item
-          label='Name'
-          name='name'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Item>
-        <Item
-          label='Personal summary'
-          name='summary'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input.TextArea />
-        </Item>
-        <Item
-          label='Total years of professional recruiter experience'
-          name='experience'
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Select />
-        </Item>
-      </Form>
+      <div className={styles.main}>
+        <Tabs
+          defaultActiveKey='published'
+          tabBarStyle={{ color: 'rgba(0, 0, 0, 0.4)' }}
+          items={items}
+        />
+      </div>
     </RecruiterSidebarLayout>
   );
 };
