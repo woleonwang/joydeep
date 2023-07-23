@@ -10,15 +10,18 @@ import Placements from './components/Placements';
 import Jobs from './components/Jobs';
 import Candidates from './components/Candidates';
 import Publications from './components/Publications';
+import { IRecriuterProfileApi } from 'utils/type';
 
 const Profile = () => {
   const { userInfo } = context.useGlobalContext();
+
+  const [profile, setProfile] = useState<Partial<IRecriuterProfileApi>>({});
 
   const items: TabsProps['items'] = [
     {
       key: 'basic',
       label: `Basic Info`,
-      children: <Basic />,
+      children: <Basic profile={profile} />,
     },
     {
       key: 'placements',
@@ -43,15 +46,20 @@ const Profile = () => {
   ];
 
   useEffect(() => {
-    fetchData();
+    fetchProfile();
   }, []);
 
-  const fetchData = async () => {
-    const resp = await request.get('recruiters.profile', {
-      placeholder: {
-        id: `${userInfo.userId}`,
-      },
-    });
+  const fetchProfile = async () => {
+    const { message }: { message: IRecriuterProfileApi } = await request.get(
+      'recruiters.profile',
+      {
+        placeholder: {
+          id: `${userInfo.userId}`,
+        },
+      }
+    );
+
+    setProfile(message);
   };
 
   return (

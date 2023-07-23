@@ -9,7 +9,7 @@
 
 const Host =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:8080'
+    ? 'http://47.245.96.254'
     : 'http://47.245.96.254';
 
 const nextConfig = {
@@ -25,6 +25,10 @@ const nextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: '/api/recruiter/profile',
+        destination: `${Host}/recruiter/profile/`, // Proxy to Backend
+      },
       {
         source: '/api/:path*',
         destination: `${Host}/:path*`, // Proxy to Backend

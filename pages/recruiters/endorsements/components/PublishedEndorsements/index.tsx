@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from 'react';
-import { CameraOutlined } from '@ant-design/icons';
 import styles from './style.module.scss';
 import { Pagination } from 'antd';
 

@@ -51,6 +51,7 @@ const api: ApiConfig = {
     signUp: '/sign_up',
     signIn: '/login',
     profile: '/recruiter/profile/:id',
+    updateProfile: '/recruiter/profile',
   },
 };
 

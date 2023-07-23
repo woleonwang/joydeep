@@ -139,3 +139,26 @@ interface IRecruiterProfile {
   publications: IPublications;
   featuredJobs: IFeaturedJobs;
 }
+
+export interface IRecriuterProfileApi {
+  user_id: number;
+  profile: {
+    id: number;
+    user_id: number;
+    name: string;
+    photo: string;
+    summary: string;
+    company: string;
+    years_of_expr: number;
+    expertise: string;
+    total_placed_candidates: number;
+    total_placed_salary: number;
+    total_candidates: number;
+    created_at: string;
+    updated_at: string;
+  };
+  // "placements": [],
+  // "jobs": [],
+  // "candidates": [],
+  // "publications": []
+}
