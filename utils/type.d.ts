@@ -179,5 +179,6 @@ export interface IRecriuterProfileApi {
   publications: {
     title: string;
     link: string;
+    created_at: string;
   }[];
 }

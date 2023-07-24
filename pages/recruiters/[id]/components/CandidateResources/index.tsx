@@ -41,19 +41,13 @@ const CandidateResources = (props: IProps) => {
                 <div className={styles.cardTitle}>{item.name}</div>
                 <div className={styles.cardChart}>
                   <div className={styles.cardText}>
-                    {Math.round(
-                      (item.count * 100) / candidates.candidatesCount
-                    )}
-                    %
+                    {Math.round(item.count)}%
                   </div>
                   <Doughnut
                     data={{
                       datasets: [
                         {
-                          data: [
-                            item.count,
-                            candidates.candidatesCount - item.count,
-                          ],
+                          data: [item.count, 100 - item.count],
                           backgroundColor: [
                             'rgba(0, 122, 255, 1)',
                             'rgba(241, 241, 241, 1)',

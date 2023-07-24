@@ -8,6 +8,7 @@
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import moment from 'moment';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 import request from 'utils/request';
@@ -18,6 +19,7 @@ import {
   IFeaturedJobs,
   IProfile,
   IPublications,
+  IRecriuterProfileApi,
   IRecruiterProfile,
   ITrackRecords,
   TLocale,
@@ -36,17 +38,75 @@ import Endorsements from './components/Endorsements';
 import mockData from 'utils/mock';
 import Publications from './components/Publications';
 import FeaturedJobs from './components/FeaturedJobs';
+import context from 'context/context';
 
 const ProfilePrevew = () => {
   const [profile, setProfile] = useState<Partial<IRecruiterProfile>>();
   const router = useRouter();
 
   useEffect(() => {
-    // fetchData();
-    setProfile(mockData);
+    fetchProfile();
   }, []);
 
-  const fetchData = async () => {};
+  const fetchProfile = async () => {
+    const { message }: { message: IRecriuterProfileApi } = await request.get(
+      'recruiters.profile',
+      {
+        placeholder: {
+          id: `${router.query.id}`,
+        },
+      }
+    );
+
+    if (message) {
+      const { profile, candidates, jobs, placements, publications } = message;
+      setProfile({
+        basicInfo: {
+          avatar: profile.photo,
+          firstName: profile.name.split(' ').slice(0, 1).join(' '),
+          lastName: profile.name.split(' ').slice(1).join(' '),
+          description: profile.summary,
+          company: profile.company,
+          experiences: profile.years_of_expr,
+          expertise: profile.expertise.split(','),
+        },
+        candidates: {
+          isVerified: true,
+          candidatesCount: profile.total_candidates,
+          jobTitles: candidates.map((item) => ({
+            name: item.title,
+            count: Math.max(0, Math.min(100, item.percentage)),
+          })),
+        },
+        featuredJobs: {
+          jobs: jobs.map((item) => ({
+            title: item.title,
+            company: item.company,
+            description: item.description,
+          })),
+        },
+        publications: {
+          publications: publications.map((item) => ({
+            timestamp: moment(item.created_at).format('YYYY-MM-SS'),
+            content: item.link,
+          })),
+          comments: mockData.publications.comments,
+        },
+        trackRecords: {
+          isVerified: true,
+          placedNumber: profile.total_placed_candidates,
+          placedSalary: profile.total_placed_salary,
+          placements: placements.map((item) => ({
+            timestamp: moment(item.created_at).format('YYYY-MM-SS'),
+            description: item.position,
+            isVerified: true,
+          })),
+        },
+
+        endorsements: mockData.endorsements,
+      });
+    }
+  };
 
   const {
     basicInfo = {} as IBasicInfo,
