@@ -1,21 +1,64 @@
-import { Button, Checkbox, Form } from 'antd';
+import { Button, Checkbox, Form, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import InputNumberWrapper from 'components/InputNumberWrapper';
 import InputWrapper from 'components/InputWrapper';
 import { useEffect } from 'react';
 import styles from './style.module.scss';
+import { IRecriuterProfileApi } from 'utils/type';
+import request from 'utils/request';
+import context from 'context/context';
+
+interface IProps {
+  profile: Partial<IRecriuterProfileApi>;
+}
+
+interface IFormData {
+  number_of_candidates: number;
+  candidates: {
+    title: string;
+    percentage: number;
+  }[];
+}
 
 const { useForm, Item, List } = Form;
-const Candidates = () => {
-  const [form] = useForm();
+const Candidates = (props: IProps) => {
+  const {
+    profile: { profile, candidates },
+  } = props;
+  const [form] = useForm<IFormData>();
+  const { userInfo } = context.useGlobalContext();
 
   useEffect(() => {
-    // form.validateFields();
-    fetchData();
+    if (profile && candidates) {
+      form.setFieldsValue({
+        number_of_candidates: profile.total_candidates,
+        candidates:
+          candidates.length > 0
+            ? candidates.map((item) => ({
+                title: item.title,
+                percentage: item.percentage,
+              }))
+            : [{}],
+      });
+    }
   }, []);
 
-  const fetchData = () => {
-    form.setFieldValue('breakdowns', [{}]);
+  const uploadCandidates = () => {
+    form.validateFields().then(async (value) => {
+      const result = await request.post('recruiters.updateProfile', {
+        user_id: userInfo.userId,
+        profile: {
+          total_candidates: value.number_of_candidates,
+        },
+        candidates: value.candidates.map((item) => ({
+          title: item.title,
+          percentage: item.percentage,
+        })),
+      });
+      if (!result?.message?.err_code) {
+        message.success('Profile updated');
+      }
+    });
   };
 
   return (
@@ -36,7 +79,7 @@ const Candidates = () => {
         <div className={styles.title}>Breakdown</div>
       </div>
 
-      <List name='breakdowns'>
+      <List name='candidates'>
         {(fields, { add, remove }) => (
           <>
             {fields.map(({ key, name, ...restField }) => (
@@ -57,7 +100,7 @@ const Candidates = () => {
                     { required: true, message: 'Please enter percentage' },
                   ]}
                 >
-                  <InputWrapper label='Percentage of the whole candidate pool' />
+                  <InputNumberWrapper label='Percentage of the whole candidate pool' />
                 </Item>
                 <div className={styles.footer}>
                   <div
@@ -81,7 +124,9 @@ const Candidates = () => {
         )}
       </List>
       <div className='saveFooter'>
-        <div className='blackBtn'>Save Changes</div>
+        <div className='blackBtn' onClick={() => uploadCandidates()}>
+          Save Changes
+        </div>
       </div>
     </Form>
   );

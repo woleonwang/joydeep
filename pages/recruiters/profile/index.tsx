@@ -36,7 +36,7 @@ const Profile = () => {
     {
       key: 'resources',
       label: `Candidate resources`,
-      children: <Candidates />,
+      children: <Candidates profile={profile} />,
     },
     {
       key: 'publications',

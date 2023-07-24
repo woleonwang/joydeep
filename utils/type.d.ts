@@ -172,6 +172,9 @@ export interface IRecriuterProfileApi {
     company: string;
     description: string;
   }[];
-  // "candidates": [],
+  candidates: {
+    title: string;
+    percentage: number;
+  }[];
   // "publications": []
 }
