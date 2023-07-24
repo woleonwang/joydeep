@@ -1,7 +1,7 @@
 import RecruiterLogginLayout from 'components/layouts/RecruiterLogginLayout';
 import RecruiterSidebarLayout from 'components/layouts/RecruiterSidebarLayout';
 import { useState, useEffect } from 'react';
-import { Form, Tabs, TabsProps } from 'antd';
+import { Tabs, TabsProps } from 'antd';
 import styles from './style.module.scss';
 import Basic from './components/Basic';
 import request from 'utils/request';
@@ -26,7 +26,7 @@ const Profile = () => {
     {
       key: 'placements',
       label: `Total career placements`,
-      children: <Placements />,
+      children: <Placements profile={profile} />,
     },
     {
       key: 'jobs',
@@ -59,7 +59,9 @@ const Profile = () => {
       }
     );
 
-    setProfile(message);
+    if (message) {
+      setProfile(message);
+    }
   };
 
   return (

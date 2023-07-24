@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form } from 'antd';
+import { Button, Checkbox, Form, message } from 'antd';
 import {
   PlusOutlined,
   EyeOutlined,
@@ -9,19 +9,74 @@ import InputWrapper from 'components/InputWrapper';
 import { useEffect, useState } from 'react';
 import styles from './style.module.scss';
 import DatePickerWrapper from 'components/DatePickerWrapper';
+import { IRecriuterProfileApi } from 'utils/type';
+import request from 'utils/request';
+import context from 'context/context';
+import moment, { Moment } from 'moment';
+
+interface IProps {
+  profile: Partial<IRecriuterProfileApi>;
+}
+
+interface IFormData {
+  number_of_candidates: number;
+  salary_of_candidates: number;
+  placements: {
+    date: Moment;
+    position: string;
+    company: string;
+    verified: boolean;
+  }[];
+}
 
 const { useForm, Item, List } = Form;
-const Placements = () => {
+const Placements = (props: IProps) => {
+  const {
+    profile: { profile, placements },
+  } = props;
+  const { userInfo } = context.useGlobalContext();
+
   const [isHide, setIsHide] = useState(false);
-  const [form] = useForm();
+  const [form] = useForm<IFormData>();
 
   useEffect(() => {
-    // form.validateFields();
-    fetchData();
-  }, []);
+    if (profile && placements) {
+      form.setFieldsValue({
+        number_of_candidates: profile.total_placed_candidates,
+        salary_of_candidates: profile.total_placed_salary,
+        placements:
+          placements.length > 0
+            ? placements.map((item) => ({
+                date: moment(item.date, 'YYYY-MM-DD'),
+                position: item.position,
+                company: item.company,
+                verified: item.verified,
+              }))
+            : [{}],
+      });
+    }
+  }, [profile]);
 
-  const fetchData = () => {
-    form.setFieldValue('placements', [{}]);
+  const uploadPlacements = () => {
+    form.validateFields().then(async (value) => {
+      console.log('value:', value);
+      const result = await request.post('recruiters.updateProfile', {
+        user_id: userInfo.userId,
+        profile: {
+          total_placed_candidates: value.number_of_candidates,
+          total_placed_salary: value.salary_of_candidates,
+        },
+        placements: value.placements.map((item) => ({
+          date: item.date.unix(),
+          position: item.position,
+          company: item.company,
+          verified: item.verified,
+        })),
+      });
+      if (!result?.message?.err_code) {
+        message.success('Profile updated');
+      }
+    });
   };
 
   return (
@@ -92,7 +147,12 @@ const Placements = () => {
                   <InputWrapper label='Company' />
                 </Item>
                 <div className={styles.footer}>
-                  <Item {...restField} name={[name, 'verified']} noStyle>
+                  <Item
+                    {...restField}
+                    name={[name, 'verified']}
+                    noStyle
+                    valuePropName='checked'
+                  >
                     <Checkbox style={{ color: 'rgba(0, 0, 0, 0.4)' }}>
                       Verified by Landd
                     </Checkbox>
@@ -118,7 +178,9 @@ const Placements = () => {
         )}
       </List>
       <div className='saveFooter'>
-        <div className='blackBtn'>Save Changes</div>
+        <div className='blackBtn' onClick={() => uploadPlacements()}>
+          Save Changes
+        </div>
       </div>
     </Form>
   );

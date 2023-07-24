@@ -157,7 +157,16 @@ export interface IRecriuterProfileApi {
     created_at: string;
     updated_at: string;
   };
-  // "placements": [],
+  placements: {
+    id: number;
+    user_id: number;
+    date: string;
+    position: string;
+    company: string;
+    verified: boolean;
+    created_at: string;
+    updated_at: string;
+  }[];
   // "jobs": [],
   // "candidates": [],
   // "publications": []

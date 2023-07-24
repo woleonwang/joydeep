@@ -1,9 +1,9 @@
-import { Form, Input, message, Select } from 'antd';
+import { useEffect } from 'react';
+import { Form, message } from 'antd';
 import InputWrapper from 'components/InputWrapper';
 import SelectWrapper from 'components/SelectWrapper';
 import TagWrapper from 'components/TagWrapper';
 import context from 'context/context';
-import { useEffect } from 'react';
 import request from 'utils/request';
 import { IRecriuterProfileApi } from 'utils/type';
 import styles from './style.module.scss';
@@ -19,7 +19,7 @@ interface IFormData {
 }
 
 interface IProps {
-  profile: IRecriuterProfileApi;
+  profile: Partial<IRecriuterProfileApi>;
 }
 
 const Basic = (props: IProps) => {
