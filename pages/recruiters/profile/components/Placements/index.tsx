@@ -59,7 +59,6 @@ const Placements = (props: IProps) => {
 
   const uploadPlacements = () => {
     form.validateFields().then(async (value) => {
-      console.log('value:', value);
       const result = await request.post('recruiters.updateProfile', {
         user_id: userInfo.userId,
         profile: {

@@ -31,7 +31,7 @@ const Profile = () => {
     {
       key: 'jobs',
       label: `Featured jobs`,
-      children: <Jobs />,
+      children: <Jobs profile={profile} />,
     },
     {
       key: 'resources',

@@ -167,7 +167,11 @@ export interface IRecriuterProfileApi {
     created_at: string;
     updated_at: string;
   }[];
-  // "jobs": [],
+  jobs: {
+    title: string;
+    company: string;
+    description: string;
+  }[];
   // "candidates": [],
   // "publications": []
 }

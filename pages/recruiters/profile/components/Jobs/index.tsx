@@ -1,22 +1,63 @@
-import { Button, Form } from 'antd';
+import { Button, Form, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import InputWrapper from 'components/InputWrapper';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styles from './style.module.scss';
 import TextAreaWrapper from 'components/TextAreaWrapper';
+import { IRecriuterProfileApi } from 'utils/type';
+import { Moment } from 'moment';
+import context from 'context/context';
+import request from 'utils/request';
+
+interface IProps {
+  profile: Partial<IRecriuterProfileApi>;
+}
+
+interface IFormData {
+  jobs: {
+    title: Moment;
+    company: string;
+    description: string;
+  }[];
+}
 
 const { useForm, Item, List } = Form;
-const Jobs = () => {
-  const [isHide, setIsHide] = useState(false);
-  const [form] = useForm();
+const Jobs = (props: IProps) => {
+  const {
+    profile: { jobs },
+  } = props;
+  const { userInfo } = context.useGlobalContext();
+  const [form] = useForm<IFormData>();
 
   useEffect(() => {
-    // form.validateFields();
-    fetchData();
-  }, []);
+    if (jobs) {
+      form.setFieldsValue({
+        jobs:
+          jobs.length > 0
+            ? jobs.map((item) => ({
+                title: item.title,
+                company: item.company,
+                description: item.description,
+              }))
+            : [{}],
+      });
+    }
+  }, [jobs]);
 
-  const fetchData = () => {
-    form.setFieldValue('jobs', [{}]);
+  const uploadJobs = () => {
+    form.validateFields().then(async (value) => {
+      const result = await request.post('recruiters.updateProfile', {
+        user_id: userInfo.userId,
+        jobs: value.jobs.map((item) => ({
+          title: item.title,
+          company: item.company,
+          description: item.description,
+        })),
+      });
+      if (result && !result.message?.err_code) {
+        message.success('Profile updated');
+      }
+    });
   };
 
   return (
@@ -74,7 +115,9 @@ const Jobs = () => {
         )}
       </List>
       <div className='saveFooter'>
-        <div className='blackBtn'>Save Changes</div>
+        <div className='blackBtn' onClick={() => uploadJobs()}>
+          Save Changes
+        </div>
       </div>
     </Form>
   );
