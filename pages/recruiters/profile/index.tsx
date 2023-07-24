@@ -41,7 +41,7 @@ const Profile = () => {
     {
       key: 'publications',
       label: `Publications`,
-      children: <Publications />,
+      children: <Publications profile={profile} />,
     },
   ];
 

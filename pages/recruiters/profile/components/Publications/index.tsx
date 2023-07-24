@@ -1,21 +1,58 @@
-import { Button, Form } from 'antd';
+import { Button, Form, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import InputWrapper from 'components/InputWrapper';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styles from './style.module.scss';
-import TextAreaWrapper from 'components/TextAreaWrapper';
+import { IRecriuterProfileApi } from 'utils/type';
+import context from 'context/context';
+import request from 'utils/request';
+
+interface IProps {
+  profile: Partial<IRecriuterProfileApi>;
+}
+
+interface IFormData {
+  publications: {
+    title: string;
+    link: string;
+  }[];
+}
 
 const { useForm, Item, List } = Form;
-const Publications = () => {
-  const [form] = useForm();
+const Publications = (props: IProps) => {
+  const [form] = useForm<IFormData>();
+  const {
+    profile: { publications },
+  } = props;
+  const { userInfo } = context.useGlobalContext();
 
   useEffect(() => {
-    // form.validateFields();
-    fetchData();
-  }, []);
+    if (publications) {
+      form.setFieldsValue({
+        publications:
+          publications.length > 0
+            ? publications.map((item) => ({
+                title: item.title,
+                link: item.link,
+              }))
+            : [{}],
+      });
+    }
+  }, [publications]);
 
-  const fetchData = () => {
-    form.setFieldValue('publications', [{}]);
+  const updatePublications = () => {
+    form.validateFields().then(async (value) => {
+      const result = await request.post('recruiters.updateProfile', {
+        user_id: userInfo.userId,
+        publications: value.publications.map((item) => ({
+          title: item.title,
+          link: item.link,
+        })),
+      });
+      if (!result?.message?.err_code) {
+        message.success('Profile updated');
+      }
+    });
   };
 
   return (
@@ -66,7 +103,9 @@ const Publications = () => {
         )}
       </List>
       <div className='saveFooter'>
-        <div className='blackBtn'>Save Changes</div>
+        <div className='blackBtn' onClick={() => updatePublications()}>
+          Save Changes
+        </div>
       </div>
     </Form>
   );

@@ -176,5 +176,8 @@ export interface IRecriuterProfileApi {
     title: string;
     percentage: number;
   }[];
-  // "publications": []
+  publications: {
+    title: string;
+    link: string;
+  }[];
 }
