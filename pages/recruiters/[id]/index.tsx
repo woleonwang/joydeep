@@ -39,6 +39,7 @@ import mockData from 'utils/mock';
 import Publications from './components/Publications';
 import FeaturedJobs from './components/FeaturedJobs';
 import context from 'context/context';
+import { defaultAvatar } from 'utils/constants';
 
 const ProfilePrevew = () => {
   const [profile, setProfile] = useState<Partial<IRecruiterProfile>>();
@@ -62,7 +63,7 @@ const ProfilePrevew = () => {
       const { profile, candidates, jobs, placements, publications } = message;
       setProfile({
         basicInfo: {
-          avatar: profile.photo,
+          avatar: profile.photo ? `/api/file/${profile.photo}` : defaultAvatar,
           firstName: profile.name.split(' ').slice(0, 1).join(' '),
           lastName: profile.name.split(' ').slice(1).join(' '),
           description: profile.summary,

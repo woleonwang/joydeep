@@ -91,7 +91,7 @@ const Sidebar = (props: IProps) => {
           }
         >
           <div className={styles.menuWrapper}>
-            <img src={userInfo.avatar || '/logo.svg'} alt='' />
+            <img src={userInfo.avatar} alt='' />
             <div className={styles.nameWrapper}>{userInfo.userName}</div>
           </div>
         </Dropdown>

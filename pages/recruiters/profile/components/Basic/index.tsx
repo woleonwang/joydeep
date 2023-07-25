@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from 'react';
-import { Form, message } from 'antd';
+import { Form, message, Upload } from 'antd';
 import InputWrapper from 'components/InputWrapper';
 import SelectWrapper from 'components/SelectWrapper';
 import TagWrapper from 'components/TagWrapper';
@@ -7,12 +8,14 @@ import context from 'context/context';
 import request from 'utils/request';
 import { IRecriuterProfileApi } from 'utils/type';
 import styles from './style.module.scss';
+import { defaultAvatar } from 'utils/constants';
 
 const { useForm, Item } = Form;
 
 interface IFormData {
   name: string;
   summary: string;
+  photo: string;
   company: string;
   experience: number;
   expertise: string[];
@@ -27,7 +30,7 @@ const Basic = (props: IProps) => {
     profile: { profile },
   } = props;
   const [form] = useForm<IFormData>();
-  const { userInfo } = context.useGlobalContext();
+  const { setUserInfo, userInfo } = context.useGlobalContext();
 
   useEffect(() => {
     if (profile) {
@@ -35,6 +38,7 @@ const Basic = (props: IProps) => {
         name: profile.name,
         summary: profile.summary,
         company: profile.company,
+        photo: profile.photo,
         experience: profile.years_of_expr,
         expertise: profile.expertise.split(','),
       });
@@ -47,21 +51,54 @@ const Basic = (props: IProps) => {
         user_id: userInfo.userId,
         profile: {
           name: value.name,
-          phone: '123',
+          photo: value.photo,
           summary: value.summary,
           company: value.company,
           years_of_expr: value.experience,
           expertise: value.expertise.join(','),
         },
       });
-      if (!result.code) {
+      if (!result.err_code) {
         message.success('Profile updated');
+        setUserInfo({
+          ...userInfo,
+          avatar: `/api/file/${value.photo}`,
+        });
       }
     });
   };
 
   return (
     <Form form={form} layout='vertical' className={styles.form}>
+      <Item name='photo' noStyle></Item>
+      <Item shouldUpdate>
+        {() => {
+          const photo = form.getFieldsValue().photo;
+          const currentAvatar = photo ? `/api/file/${photo}` : defaultAvatar;
+
+          return (
+            <Upload
+              action='/api/file/upload'
+              showUploadList={false}
+              onChange={(info) => {
+                if (info.file.status === 'done') {
+                  const fileId = info.file.response?.message?.file_id;
+                  if (fileId) {
+                    form.setFieldsValue({
+                      photo: fileId,
+                    });
+                  }
+                  message.success('Avatar upload succeed');
+                } else if (info.file.status === 'error') {
+                  message.error('Avatar upload failed');
+                }
+              }}
+            >
+              <img className={styles.avatar} src={currentAvatar} alt='' />
+            </Upload>
+          );
+        }}
+      </Item>
       <Item
         name='name'
         rules={[

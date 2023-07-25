@@ -41,11 +41,12 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
         const { profile } = message;
         setUserInfo({
           ...userInfo,
-          avatar: profile.photo,
+          avatar: profile.photo ? `/api/file/${profile.photo}` : '/logo.svg',
         });
       } else {
         setUserInfo({
           ...userInfo,
+          avatar: '',
         });
       }
       setPending(false);
