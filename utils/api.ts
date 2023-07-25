@@ -50,6 +50,7 @@ const api: ApiConfig = {
   recruiters: {
     signUp: '/sign_up',
     signIn: '/login',
+    signOut: '/logout',
     profile: '/recruiter/profile/:id',
     updateProfile: '/recruiter/profile',
   },

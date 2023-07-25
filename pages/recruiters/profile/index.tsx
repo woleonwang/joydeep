@@ -65,7 +65,7 @@ const Profile = () => {
   };
 
   return (
-    <RecruiterSidebarLayout activeMenu='profile'>
+    <RecruiterSidebarLayout activeMenu='Profile'>
       <div className={styles.main}>
         <Tabs
           defaultActiveKey='basic'

@@ -41,7 +41,7 @@ const Endorsements = () => {
   };
 
   return (
-    <RecruiterSidebarLayout activeMenu='endorsements'>
+    <RecruiterSidebarLayout activeMenu='Endorsements'>
       <div className={styles.main}>
         <Tabs
           defaultActiveKey='published'

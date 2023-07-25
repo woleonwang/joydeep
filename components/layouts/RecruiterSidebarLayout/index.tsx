@@ -7,6 +7,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { LayoutOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import Sidebar from './Sidebar';
 import styles from './styles.module.scss';
@@ -18,26 +19,21 @@ interface IProps {
 
 const RecruiterSidebarLayout = (props: IProps) => {
   const { activeMenu, children } = props;
-  const [avatar, setAvatar] = useState<string>('');
-
-  useEffect(() => {}, []);
-
   return (
     <div className={styles.container}>
-      {avatar && (
-        <div className={styles.avatarContainer}>
-          <Image src={avatar} width={32} height={32} alt='avatar' />
-        </div>
-      )}
       <div className={styles.left}>
         <Sidebar activeMenu={activeMenu} />
       </div>
 
       <div className={styles.right}>
         <div className={styles.breadcrumb}>
-          <div>icon</div>
-          <div>Dashboards</div>
-          <div>/{activeMenu}</div>
+          <div>
+            <LayoutOutlined />
+          </div>
+          <div className={styles.levelOne}>
+            Dashboards&nbsp;&nbsp;/&nbsp;&nbsp;
+          </div>
+          <div>{activeMenu}</div>
         </div>
         <div className={styles.innerContainer}>{children}</div>
       </div>

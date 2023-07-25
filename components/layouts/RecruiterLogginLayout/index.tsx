@@ -10,6 +10,8 @@ import { ReactNode, useEffect, useState } from 'react';
 import router from 'next/router';
 import { getStorage } from 'utils/helper';
 import context from 'context/context';
+import { IRecriuterProfileApi } from 'utils/type';
+import request from 'utils/request';
 
 interface IProps {
   children: ReactNode;
@@ -20,14 +22,37 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
   const { setUserInfo } = context.useGlobalContext();
 
   useEffect(() => {
+    fetchMetaInfo();
+  }, []);
+
+  const fetchMetaInfo = async () => {
     const userInfo = getStorage('userinfo');
     if (userInfo) {
-      setUserInfo(getStorage('userinfo'));
+      const { message }: { message: IRecriuterProfileApi } = await request.get(
+        'recruiters.profile',
+        {
+          placeholder: {
+            id: userInfo.userId,
+          },
+        }
+      );
+
+      if (message) {
+        const { profile } = message;
+        setUserInfo({
+          ...userInfo,
+          avatar: profile.photo,
+        });
+      } else {
+        setUserInfo({
+          ...userInfo,
+        });
+      }
       setPending(false);
     } else {
       router.push('/recruiters/sign_in');
     }
-  }, []);
+  };
 
   return pending ? <></> : children;
 };

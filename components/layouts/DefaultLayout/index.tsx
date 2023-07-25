@@ -42,7 +42,7 @@ const DefaultLayout = ({ children }: IProps) => {
 
     if (data.code === 0) {
       setStorage('token', userToken);
-      router.replace(router.pathname)
+      router.replace(router.pathname);
       setPending(false);
     }
   };

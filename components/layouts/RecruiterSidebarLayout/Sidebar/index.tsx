@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /*
  * @LastEditors: wmy
  * @Description: 功能描述
@@ -9,15 +10,13 @@
 import Image from 'next/image';
 
 import styles from './styles.module.scss';
-import { Progress } from 'antd';
-import {
-  HomeOutlined,
-  ProfileOutlined,
-  MoneyCollectOutlined,
-} from '@ant-design/icons';
+import { Dropdown, Menu } from 'antd';
+import { HomeOutlined, ProfileOutlined } from '@ant-design/icons';
 import classnames from 'classnames';
 import Link from 'next/link';
-import { TRole } from 'utils/type';
+import context from 'context/context';
+import request from 'utils/request';
+import router from 'next/router';
 
 interface IProps {
   activeMenu: string;
@@ -25,6 +24,7 @@ interface IProps {
 
 const Sidebar = (props: IProps) => {
   const { activeMenu } = props;
+  const { userInfo } = context.useGlobalContext();
 
   const menu = [
     {
@@ -66,6 +66,35 @@ const Sidebar = (props: IProps) => {
             );
           })}
         </div>
+      </div>
+      <div className={styles.footer}>
+        <Dropdown
+          placement='top'
+          overlay={
+            <Menu
+              style={{ width: 150 }}
+              onClick={async (item) => {
+                if (item.key === 'logout') {
+                  const { message } = await request.get('recruiters.signOut');
+                  if (message && !message.err_code) {
+                    router.replace('/recruiters/sign_in');
+                  }
+                }
+              }}
+              items={[
+                {
+                  key: 'logout',
+                  label: 'Logout',
+                },
+              ]}
+            />
+          }
+        >
+          <div className={styles.menuWrapper}>
+            <img src={userInfo.avatar || '/logo.svg'} alt='' />
+            <div className={styles.nameWrapper}>{userInfo.userName}</div>
+          </div>
+        </Dropdown>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { createContext, ReactElement, useContext, useState } from 'react';
 interface IUserInfo {
   userName: string;
   userId: number;
+  avatar: string;
 }
 
 interface IGlobalContext {
@@ -17,6 +18,7 @@ const ContextWrapper = ({ children }: { children: React.ReactElement }) => {
   const [userInfo, setUserInfo] = useState<IUserInfo>({
     userName: '',
     userId: 0,
+    avatar: '',
   });
 
   return (
