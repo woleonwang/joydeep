@@ -7,6 +7,7 @@ import context from 'context/context';
 import styles from './style.module.scss';
 import PublishedEndorsements from './components/PublishedEndorsements';
 import GatheringForm from './components/GatheringForm';
+import ReceivedEndorsements from './components/ReceivedEndorsements';
 
 const Endorsements = () => {
   const { userInfo } = context.useGlobalContext();
@@ -21,12 +22,11 @@ const Endorsements = () => {
       key: 'form',
       label: `Endorsement gathering form`,
       children: <GatheringForm />,
-      // children: <GatheringForm />,
     },
     {
       key: 'received',
       label: `Endorsements received`,
-      // children: <ReceivedEndorsements />,
+      children: <ReceivedEndorsements />,
     },
   ];
 
