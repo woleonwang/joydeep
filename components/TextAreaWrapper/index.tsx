@@ -8,7 +8,7 @@ export interface IProps {
   onChange?: ChangeEventHandler;
 }
 
-const InputWrapper = ({ label, value, onChange }: IProps) => {
+const TextAreaWrapper = ({ label, value, onChange }: IProps) => {
   return (
     <div className={styles.inputWrapper}>
       <div className={styles.inputLabel}>{label}</div>
@@ -17,9 +17,10 @@ const InputWrapper = ({ label, value, onChange }: IProps) => {
         value={value}
         onChange={onChange}
         rows={5}
+        autoSize={{ minRows: 5, maxRows: 5 }}
       />
     </div>
   );
 };
 
-export default InputWrapper;
+export default TextAreaWrapper;

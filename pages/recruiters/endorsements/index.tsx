@@ -6,6 +6,7 @@ import request from 'utils/request';
 import context from 'context/context';
 import styles from './style.module.scss';
 import PublishedEndorsements from './components/PublishedEndorsements';
+import GatheringForm from './components/GatheringForm';
 
 const Endorsements = () => {
   const { userInfo } = context.useGlobalContext();
@@ -19,6 +20,7 @@ const Endorsements = () => {
     {
       key: 'form',
       label: `Endorsement gathering form`,
+      children: <GatheringForm />,
       // children: <GatheringForm />,
     },
     {
