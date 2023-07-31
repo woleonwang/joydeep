@@ -54,6 +54,10 @@ const Placements = (props: IProps) => {
               }))
             : [{}],
       });
+    } else {
+      form.setFieldsValue({
+        placements: [{}],
+      });
     }
   }, [profile]);
 

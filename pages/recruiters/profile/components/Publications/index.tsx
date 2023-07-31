@@ -37,6 +37,10 @@ const Publications = (props: IProps) => {
               }))
             : [{}],
       });
+    } else {
+      form.setFieldsValue({
+        publications: [{}],
+      });
     }
   }, [publications]);
 

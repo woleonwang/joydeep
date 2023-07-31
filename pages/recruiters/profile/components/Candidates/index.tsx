@@ -40,6 +40,10 @@ const Candidates = (props: IProps) => {
               }))
             : [{}],
       });
+    } else {
+      form.setFieldsValue({
+        candidates: [{}],
+      });
     }
   }, []);
 

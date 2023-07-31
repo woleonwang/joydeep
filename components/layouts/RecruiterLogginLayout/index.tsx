@@ -37,7 +37,7 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
         }
       );
 
-      if (message) {
+      if (message.profile) {
         const { profile } = message;
         setUserInfo({
           ...userInfo,

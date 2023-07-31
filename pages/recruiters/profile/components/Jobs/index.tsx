@@ -41,6 +41,10 @@ const Jobs = (props: IProps) => {
               }))
             : [{}],
       });
+    } else {
+      form.setFieldsValue({
+        jobs: [{}],
+      });
     }
   }, [jobs]);
 
