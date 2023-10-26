@@ -17,9 +17,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  sassOptions: {
-    prependData: `@import "styles/variables.scss";`,
-  },
+  // sassOptions: {
+  //   prependData: `@import "styles/variables.scss";`,
+  // },
   images: {
     domains: ['travo-dev.oss-cn-shanghai.aliyuncs.com'],
   },
