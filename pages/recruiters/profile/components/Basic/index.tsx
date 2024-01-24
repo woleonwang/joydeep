@@ -9,6 +9,7 @@ import request from 'utils/request';
 import { IRecriuterProfileApi } from 'utils/type';
 import styles from './style.module.scss';
 import { defaultAvatar } from 'utils/constants';
+import TextAreaWrapper from 'components/TextAreaWrapper';
 
 const { useForm, Item } = Form;
 
@@ -117,7 +118,7 @@ const Basic = (props: IProps) => {
           },
         ]}
       >
-        <InputWrapper label='Personal summary' />
+        <TextAreaWrapper label='Personal summary' />
       </Item>
       <Item
         name='company'

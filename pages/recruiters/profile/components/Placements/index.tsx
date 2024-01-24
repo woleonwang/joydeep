@@ -29,6 +29,7 @@ interface IFormData {
   }[];
 }
 
+const datetimeZeroValue = '1970-01-01T00:00:00+08:00';
 const { useForm, Item, List } = Form;
 const Placements = (props: IProps) => {
   const {
@@ -46,12 +47,17 @@ const Placements = (props: IProps) => {
         salary_of_candidates: profile.total_placed_salary,
         placements:
           placements.length > 0
-            ? placements.map((item) => ({
-                date: moment(item.date, 'YYYY-MM-DD'),
-                position: item.position,
-                company: item.company,
-                verified: item.verified,
-              }))
+            ? placements
+                .sort((a, b) => (a.id > b.id ? 1 : -1))
+                .map((item) => ({
+                  date:
+                    item.date === datetimeZeroValue
+                      ? undefined
+                      : moment(item.date, 'YYYY-MM-DD'),
+                  position: item.position,
+                  company: item.company,
+                  verified: item.verified,
+                }))
             : [{}],
       });
     } else {
@@ -70,7 +76,7 @@ const Placements = (props: IProps) => {
           total_placed_salary: value.salary_of_candidates,
         },
         placements: value.placements.map((item) => ({
-          date: item.date.unix(),
+          date: item.date?.unix(),
           position: item.position,
           company: item.company,
           verified: item.verified,
@@ -126,13 +132,17 @@ const Placements = (props: IProps) => {
       <List name='placements'>
         {(fields, { add, remove }) => (
           <>
+            <Button
+              onClick={() => add(undefined, 0)}
+              block
+              icon={<PlusOutlined />}
+              className={styles.footerBtn}
+            >
+              Add
+            </Button>
             {fields.map(({ key, name, ...restField }) => (
               <div key={key} className={styles.expWrapper}>
-                <Item
-                  {...restField}
-                  name={[name, 'date']}
-                  rules={[{ required: true, message: 'Please enter date' }]}
-                >
+                <Item {...restField} name={[name, 'date']}>
                   <DatePickerWrapper label='Date' />
                 </Item>
                 <Item
@@ -150,7 +160,7 @@ const Placements = (props: IProps) => {
                   <InputWrapper label='Company' />
                 </Item>
                 <div className={styles.footer}>
-                  <Item
+                  {/* <Item
                     {...restField}
                     name={[name, 'verified']}
                     noStyle
@@ -159,7 +169,8 @@ const Placements = (props: IProps) => {
                     <Checkbox style={{ color: 'rgba(0, 0, 0, 0.4)' }}>
                       Verified by Landd
                     </Checkbox>
-                  </Item>
+                  </Item> */}
+                  <div></div>
                   <div
                     style={{ cursor: 'pointer' }}
                     onClick={() => remove(name)}
@@ -169,14 +180,6 @@ const Placements = (props: IProps) => {
                 </div>
               </div>
             ))}
-            <Button
-              onClick={() => add()}
-              block
-              icon={<PlusOutlined />}
-              className={styles.footerBtn}
-            >
-              Add
-            </Button>
           </>
         )}
       </List>
