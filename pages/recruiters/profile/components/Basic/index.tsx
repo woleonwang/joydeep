@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect } from 'react';
 import { Form, message, Upload } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+
 import InputWrapper from 'components/InputWrapper';
 import SelectWrapper from 'components/SelectWrapper';
 import TagWrapper from 'components/TagWrapper';
@@ -8,7 +10,6 @@ import context from 'context/context';
 import request from 'utils/request';
 import { IRecriuterProfileApi } from 'utils/type';
 import styles from './style.module.scss';
-import { defaultAvatar } from 'utils/constants';
 import TextAreaWrapper from 'components/TextAreaWrapper';
 
 const { useForm, Item } = Form;
@@ -25,6 +26,15 @@ interface IFormData {
 interface IProps {
   profile: Partial<IRecriuterProfileApi>;
 }
+
+const getExpirenceOptions = (max: number) => {
+  return new Array(max + 1).fill(0).map((_, index) => ({
+    value: index + 1,
+    label: `${index === max ? `${max}+` : index + 1} year${
+      index === 0 ? '' : 's'
+    }`,
+  }));
+};
 
 const Basic = (props: IProps) => {
   const {
@@ -75,7 +85,15 @@ const Basic = (props: IProps) => {
       <Item shouldUpdate>
         {() => {
           const photo = form.getFieldsValue().photo;
-          const currentAvatar = photo ? `/api/file/${photo}` : defaultAvatar;
+
+          const content = !photo ? (
+            <img className={styles.avatar} src={`/api/file/${photo}`} alt='' />
+          ) : (
+            <div className={styles.upload}>
+              <PlusOutlined style={{ fontSize: 20 }} />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </div>
+          );
 
           return (
             <Upload
@@ -95,7 +113,7 @@ const Basic = (props: IProps) => {
                 }
               }}
             >
-              <img className={styles.avatar} src={currentAvatar} alt='' />
+              {content}
             </Upload>
           );
         }}
@@ -140,20 +158,7 @@ const Basic = (props: IProps) => {
       >
         <SelectWrapper
           label='Years of experience'
-          options={[
-            {
-              value: 1,
-              label: '1 year',
-            },
-            {
-              value: 2,
-              label: '2 years',
-            },
-            {
-              value: 3,
-              label: '3 years',
-            },
-          ]}
+          options={getExpirenceOptions(20)}
         />
       </Item>
       <Item

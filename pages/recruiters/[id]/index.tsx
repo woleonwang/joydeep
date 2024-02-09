@@ -10,35 +10,27 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import moment from 'moment';
 import Image from 'next/image';
-import dayjs from 'dayjs';
 import request from 'utils/request';
 import {
   IBasicInfo,
   ICandidate,
   IEndorsements,
   IFeaturedJobs,
-  IProfile,
   IPublications,
   IRecriuterProfileApi,
   IRecruiterProfile,
   ITrackRecords,
-  TLocale,
 } from 'utils/type';
 import styles from './style.module.scss';
-import { getTransfer } from 'utils/i18n';
-import classnames from 'classnames';
 import Link from 'next/link';
-import { Button, message } from 'antd';
-import CopyRight from 'components/CopyRight';
+import { Button } from 'antd';
 import BasicInfo from './components/BasicInfo';
-import { formatNumber } from 'utils/helper';
 import RecruiterTrackRecord from './components/RecruiterTrackRecord';
 import CandidateResources from './components/CandidateResources';
 import Endorsements from './components/Endorsements';
 import mockData from 'utils/mock';
 import Publications from './components/Publications';
 import FeaturedJobs from './components/FeaturedJobs';
-import context from 'context/context';
 import { defaultAvatar } from 'utils/constants';
 
 const ProfilePrevew = () => {

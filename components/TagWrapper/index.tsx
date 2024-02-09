@@ -13,6 +13,14 @@ const TagWrapper = ({ label, value = [], onChange }: IProps) => {
   const [addValue, setAddValue] = useState('');
   const [isAdd, setIsAdd] = useState(false);
 
+  const submitTag = () => {
+    if (addValue.trim().length) {
+      onChange?.([addValue.trim(), ...value]);
+    }
+    setIsAdd(false);
+    setAddValue('');
+  };
+
   return (
     <div className={styles.inputWrapper}>
       <div className={styles.inputLabel}>{label}</div>
@@ -21,15 +29,11 @@ const TagWrapper = ({ label, value = [], onChange }: IProps) => {
           <Input
             value={addValue}
             onChange={(event) => setAddValue(event.target.value)}
-            onPressEnter={() => {
-              if (addValue.trim().length) {
-                onChange?.([addValue.trim(), ...value]);
-              }
-              setIsAdd(false);
-              setAddValue('');
-            }}
+            onPressEnter={submitTag}
             autoFocus
             size='small'
+            style={{ padding: '0 6px' }}
+            onBlur={submitTag}
           />
         ) : (
           <div

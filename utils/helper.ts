@@ -32,4 +32,10 @@ export const formatNumber = (n: number): string => {
   return n.toLocaleString('en-US');
 };
 
+export const getDefaultSignUrl = (): string => {
+  return getStorage('hasSignedIn')
+    ? '/recruiters/sign_in'
+    : '/recruiters/sign_up';
+};
+
 export const RecommendTokenKey = 'recommend_token';

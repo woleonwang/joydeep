@@ -40,6 +40,7 @@ const Signin = () => {
         userName: resp.username,
         userId: resp.user_id,
       });
+      setStorage('hasSignedIn', 1);
 
       router.push('/recruiters/profile');
     } else {

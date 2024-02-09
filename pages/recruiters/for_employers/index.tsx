@@ -13,6 +13,8 @@ import Image from 'next/image';
 // import HowItWork from '../../components/HowItWork';
 import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
+import Link from 'next/link';
+import router from 'next/router';
 
 const ForEmployers = () => {
   const howItWorkSteps = [
@@ -162,7 +164,11 @@ const ForEmployers = () => {
         className={classnames(styles.blockWrapper, styles.createProfileWrapper)}
       >
         <div className={styles.block}>
-          <Button type='primary' className={styles.createButton}>
+          <Button
+            type='primary'
+            className={styles.createButton}
+            onClick={() => router.push('/recruiters/sign_up')}
+          >
             Start hiring now →
           </Button>
         </div>

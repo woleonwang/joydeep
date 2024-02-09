@@ -15,6 +15,7 @@ import styles from './style.module.scss';
 import EmptyLayout from 'components/layouts/EmptyLayout';
 import errorCode from 'utils/error';
 import Link from 'next/link';
+import { setStorage } from 'utils/helper';
 
 const Signup = () => {
   const [email, setEmail] = useState<string>('');
@@ -42,7 +43,7 @@ const Signup = () => {
     });
     if (!resp.err_code) {
       message.success('Sign up succeed');
-      // localStorage.setItem('recruiter_token', data.data.token);
+      setStorage('hasSignedIn', 1);
       router.push('/recruiters/profile');
     } else if (resp.err_code === errorCode.ErrCodeDuplicateEmail) {
       message.error('Email is duplicated');

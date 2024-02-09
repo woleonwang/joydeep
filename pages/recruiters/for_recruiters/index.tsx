@@ -12,6 +12,8 @@ import classnames from 'classnames';
 import Link from 'next/link';
 import UnlogginLayout from '../../../components/layouts/UnlogginLayout';
 import styles from './style.module.scss';
+import router from 'next/router';
+import { getDefaultSignUrl } from 'utils/helper';
 
 const ForRecruiters = () => {
   return (
@@ -89,7 +91,11 @@ const ForRecruiters = () => {
                 posts/publications
               </div>
             </div>
-            <Button type='primary' className={styles.bannerButton}>
+            <Button
+              type='primary'
+              className={styles.bannerButton}
+              onClick={() => router.push(getDefaultSignUrl())}
+            >
               {'Create your profile now →'}
             </Button>
           </div>
@@ -205,7 +211,7 @@ const ForRecruiters = () => {
         <div className={styles.block}>
           <div>
             <div className={styles.blockTitle}>
-              Join our recruiter community{' '}
+              Join the only dedicated community for recruiters in Singapore{' '}
             </div>
             <div className={styles.blockContent}>
               Need advice on how to manage salary negotiations? Would like to
@@ -228,45 +234,6 @@ const ForRecruiters = () => {
             className={styles.joinSymbol2Img}
             src='/freelancer/joinSymbol-2.svg'
             alt='join2'
-          />
-        </div>
-      </div>
-
-      <div className={classnames(styles.blockWrapper, styles.buildWrapper)}>
-        <div className={styles.block}>
-          <div className={styles.buildTextWrapper}>
-            <div className={styles.blockTitle}>Build your own business</div>
-            <div className={styles.blockContent}>
-              We provide a suite of tools that helps experienced recruiters
-              build their own business, which means you decide where to work,
-              when to work, who to work with, on what terms, and retain 90% of
-              the recruitment fees paid by employers.
-            </div>
-            <Link href='/recruiters/for_employers'>
-              <a>
-                <Button className={styles.buildButton}>Learn more →</Button>
-              </a>
-            </Link>
-          </div>
-          <img
-            className={styles.buildImg}
-            src='/freelancer/build.svg'
-            alt='build'
-          />
-          <img
-            className={styles.buildSymbol1Img}
-            src='/freelancer/buildSymbol-1.svg'
-            alt='build1'
-          />
-          <img
-            className={styles.buildSymbol2Img}
-            src='/freelancer/buildSymbol-2.svg'
-            alt='build2'
-          />
-          <img
-            className={styles.buildSymbol3Img}
-            src='/freelancer/buildSymbol-3.svg'
-            alt='build3'
           />
         </div>
       </div>
