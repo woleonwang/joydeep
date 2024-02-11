@@ -86,7 +86,7 @@ const Basic = (props: IProps) => {
         {() => {
           const photo = form.getFieldsValue().photo;
 
-          const content = !photo ? (
+          const content = photo ? (
             <img className={styles.avatar} src={`/api/file/${photo}`} alt='' />
           ) : (
             <div className={styles.upload}>
