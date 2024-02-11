@@ -167,7 +167,7 @@ const ForEmployers = () => {
           <Button
             type='primary'
             className={styles.createButton}
-            onClick={() => router.push('/recruiters/sign_up')}
+            onClick={() => router.push('/hire_now')}
           >
             Start hiring now →
           </Button>
