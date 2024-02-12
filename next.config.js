@@ -27,7 +27,11 @@ const nextConfig = {
     return [
       {
         source: '/api/recruiter/profile',
-        destination: `${Host}/recruiter/profile/`, // Proxy to Backend
+        destination: `${Host}/recruiter/profile/`,
+      },
+      {
+        source: '/api/recruiter/endorse',
+        destination: `${Host}/recruiter/endorse/`,
       },
       {
         source: '/api/:path*',

@@ -1,0 +1,20 @@
+.formWrapper {
+  width: 450px;
+  margin: 200px auto;
+}
+
+.formPanel {
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 16px;
+
+  :global(.ant-form-item-label) {
+    @include fs14b;
+  }
+}
+
+.formTitle {
+  @include fs24b;
+  margin-bottom: 24px;
+}

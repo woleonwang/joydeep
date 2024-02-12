@@ -41,20 +41,15 @@
     margin-right: 5px;
   }
 
-  .client {
-    display: inline-block;
-    color: rgba(89, 168, 212, 1);
-    background-color: rgba(226, 245, 255, 1);
-    padding: 0 6px;
-    border-radius: 18px;
+  .approve {
+    cursor: pointer;
+    color: rgba(161, 227, 203, 1);
   }
 
-  .candidate {
-    display: inline-block;
-    color: rgba(138, 140, 217, 1);
-    background-color: rgba(237, 237, 255, 1);
-    padding: 0 6px;
-    border-radius: 18px;
+  .decline {
+    cursor: pointer;
+    margin-top: 10px;
+    color: rgba(255, 71, 71, 1);
   }
 }
 

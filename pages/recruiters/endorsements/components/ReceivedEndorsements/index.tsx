@@ -1,50 +1,75 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from 'react';
+import { Pagination, message } from 'antd';
+import dayjs from 'dayjs';
+import context from 'context/context';
+import request from 'utils/request';
+
 import styles from './style.module.scss';
-import { Pagination } from 'antd';
 
-export interface IEndorsement {
-  id: string;
-  username: string;
-  jobTitle: string;
-  endorsements: string;
-  date: string;
-  identity: 'candidate' | 'client';
-  avatar: string;
-}
+import { IApiEndorsement, IEndorsement } from '../../type.d';
+import { ENDORSEMENT_STATUS } from 'utils/constants';
+import { isRespSucceed } from 'utils/helper';
 
-const mockData: IEndorsement[] = [
-  {
-    id: '#01',
-    username: 'Kate Morrison',
-    jobTitle: 'Project manager',
-    endorsements:
-      'Jacky is a great and efficient recruiter. He helped me to negotiate for a good remuneration package and he delivered it. He successfully secured the role as per my expected package.',
-    date: '2015-08-18',
-    identity: 'candidate',
-    avatar: '/logo.svg',
-  },
-  {
-    id: '#02',
-    username: 'Koray Okumus',
-    jobTitle: 'Senior Designer',
-    endorsements:
-      'The time when I was looking for a career move to find the place that suites my wish list for my career advancement and growth, Jacky came to rescue. I was really impressed by his knowledge on my profession (UX Design). It seems like he already knew the kind of challenges I was facing and what would the best place for me to work on my next job. It became easy to have my trust on him, because of his in-depth research of the job market and sharing with me the job positions that really mattered to me. I am sure, if I will ever need a help again, he will probably be my fist point of contact. Wish him good luck.',
-    date: '2016-02-02',
-    identity: 'client',
-    avatar: '/logo.svg',
-  },
-];
+const PAGE_SIZE = 100;
+const STATUS_APPROVE = 2;
 
 const ReceivedEndorsements = () => {
   const [endorsements, setEndorsements] = useState<IEndorsement[]>([]);
   const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const { userInfo } = context.useGlobalContext();
+
   useEffect(() => {
-    setEndorsements(mockData);
-    setTotal(100);
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    const resp = await request.get('recruiters.getEndorsements', {
+      placeholder: {
+        user_id: `${userInfo.userId}`,
+      },
+      status: STATUS_APPROVE,
+      page: currentPage,
+      size: PAGE_SIZE,
+    });
+    if (!!resp.message?.endorsements?.length) {
+      setEndorsements(
+        resp.message.endorsements.map((item: IApiEndorsement) => ({
+          id: item.id,
+          inviteId: item.invite_id,
+          username: item.endorser_name,
+          jobTitle: item.title,
+          endorsements: item.content,
+          date: dayjs(item.created_at).format('YYYY-MM-DD'),
+          identity: item.identity === 1 ? 'candidate' : 'client',
+        }))
+      );
+      setTotal((resp.message.endorsements || []).length);
+    }
+  };
+
+  const handleItem = async (
+    item: IEndorsement,
+    action: 'approve' | 'decline'
+  ) => {
+    const resp = await request.post('recruiters.updateEndorsement', {
+      user_id: userInfo.userId,
+      invite_id: item.inviteId,
+      status:
+        action === 'approve'
+          ? ENDORSEMENT_STATUS.approved
+          : ENDORSEMENT_STATUS.declined,
+    });
+
+    if (isRespSucceed(resp)) {
+      message.success('Operation succeed');
+      fetchData();
+    } else {
+      message.error('Operation failed');
+    }
+  };
 
   const columns: {
     label: string;
@@ -100,16 +125,31 @@ const ReceivedEndorsements = () => {
     {
       label: 'Operate',
       width: '10%',
-      render: () => {
+      render: (_, record: IEndorsement) => {
         return (
           <div>
-            <div>Approve</div>
-            <div>Decline</div>
+            <div
+              className={styles.approve}
+              onClick={() => handleItem(record, 'approve')}
+            >
+              Approve
+            </div>
+            <div
+              className={styles.decline}
+              onClick={() => handleItem(record, 'decline')}
+            >
+              Decline
+            </div>
           </div>
         );
       },
     },
   ];
+
+  const visibleEndorsements = endorsements.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
 
   return (
     <div>
@@ -129,7 +169,7 @@ const ReceivedEndorsements = () => {
           })}
         </div>
         <div className={styles.body}>
-          {endorsements.map((item, index) => {
+          {visibleEndorsements.map((item, index) => {
             return (
               <div key={index} className={styles.row}>
                 {columns.map((column, index) => {
@@ -150,13 +190,15 @@ const ReceivedEndorsements = () => {
         </div>
       </div>
       <div className={styles.paginationWrapper}>
-        <Pagination
-          total={total}
-          pageSize={10}
-          current={currentPage}
-          onChange={(page) => setCurrentPage(page)}
-          showSizeChanger={false}
-        />
+        {!!visibleEndorsements.length && (
+          <Pagination
+            total={total}
+            pageSize={10}
+            current={currentPage}
+            onChange={(page) => setCurrentPage(page)}
+            showSizeChanger={false}
+          />
+        )}
       </div>
     </div>
   );

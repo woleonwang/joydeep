@@ -8,7 +8,7 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import router from 'next/router';
-import { getStorage } from 'utils/helper';
+import { getStorage, isRespSucceed } from 'utils/helper';
 import context from 'context/context';
 import { IRecriuterProfileApi } from 'utils/type';
 import request from 'utils/request';
@@ -28,7 +28,7 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
   const fetchMetaInfo = async () => {
     const userInfo = getStorage('userinfo');
     if (userInfo) {
-      const { message }: { message: IRecriuterProfileApi } = await request.get(
+      const resp: { message: IRecriuterProfileApi } = await request.get(
         'recruiters.profile',
         {
           placeholder: {
@@ -37,8 +37,8 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
         }
       );
 
-      if (message.profile) {
-        const { profile } = message;
+      if (isRespSucceed(resp)) {
+        const { profile } = resp.message;
         setUserInfo({
           ...userInfo,
           avatar: profile.photo ? `/api/file/${profile.photo}` : '/logo.svg',
@@ -48,7 +48,9 @@ const RecruiterLogginLayout = ({ children }: IProps) => {
           ...userInfo,
           avatar: '',
         });
+        router.push('/recruiters/sign_in');
       }
+
       setPending(false);
     } else {
       router.push('/recruiters/sign_in');

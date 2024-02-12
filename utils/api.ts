@@ -53,6 +53,18 @@ const api: ApiConfig = {
     signOut: '/logout',
     profile: '/recruiter/profile/:id',
     updateProfile: '/recruiter/profile',
+
+    // Endorsement
+    // 获取列表
+    getEndorsements: '/recruiter/endorse/:user_id', //?page=2&size=1&status=1&status=2
+    // 更新资源
+    updateEndorsement: '/recruiter/endorse',
+    // 获取模板
+    getEndorsementDraft: '/recruiter/endorse/draft/:id',
+    // 更新模板
+    updateEndorsementDraft: '/recruiter/endorse/draft',
+    // 获取表单链接
+    getEndorsementLink: '/recruiter/endorse/:user_id/invite',
   },
 };
 

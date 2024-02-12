@@ -1,8 +1,12 @@
-import { Collapse, Form, Input, Select } from 'antd';
+import { Collapse, Form, Input, Select, message } from 'antd';
 import { ExportOutlined } from '@ant-design/icons';
 import TextAreaWrapper from 'components/TextAreaWrapper';
 import { useState, useEffect } from 'react';
 import styles from './style.module.scss';
+import request from 'utils/request';
+import context from 'context/context';
+import { ENDORSEMENT_IDENTITY } from 'utils/constants';
+import { isRespSucceed } from 'utils/helper';
 
 const { Panel } = Collapse;
 
@@ -23,15 +27,47 @@ const GatheringForm = () => {
   const [pagePlaceholder, setPagePlaceholder] = useState('');
   const [form] = useForm<IFormData>();
 
+  const { userInfo } = context.useGlobalContext();
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {};
+  const fetchData = async () => {
+    const resp = await request.get('recruiters.getEndorsementDraft', {
+      placeholder: { id: `${userInfo.userId}` },
+    });
 
-  const save = () => {};
+    if (resp && !resp.message?.err_code) {
+      setPagePlaceholder(resp.message.content || '');
+    }
+  };
 
-  const submit = () => {};
+  const save = async () => {
+    const resp = await request.post('recruiters.updateEndorsementDraft', {
+      user_id: userInfo.userId,
+      content: pagePlaceholder,
+    });
+
+    if (resp && !resp.message?.err_code) {
+      message.success('Draft saved');
+    }
+  };
+
+  const generateLink = async () => {
+    const resp = await request.get('recruiters.getEndorsementLink', {
+      placeholder: {
+        user_id: `${userInfo.userId}`,
+      },
+    });
+
+    if (isRespSucceed(resp)) {
+      const inviteId = resp.message.invite_id;
+      window.open(
+        `/recruiters/endorsement_invite?inviteId=${inviteId}&userId=${userInfo.userId}`
+      );
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -65,7 +101,7 @@ const GatheringForm = () => {
       </div>
       <div className={styles.right}>
         <div className={styles.linkWrapper}>
-          <div className={styles.linkBtn}>
+          <div className={styles.linkBtn} onClick={() => generateLink()}>
             Link
             <ExportOutlined className={styles.icon} />
           </div>
@@ -106,16 +142,10 @@ const GatheringForm = () => {
                   required
                 >
                   <Select
-                    options={[
-                      {
-                        value: 1,
-                        label: 'client',
-                      },
-                      {
-                        value: 2,
-                        label: 'candidate',
-                      },
-                    ]}
+                    options={ENDORSEMENT_IDENTITY.map((option) => ({
+                      value: option.key,
+                      label: option.label,
+                    }))}
                   />
                 </Item>
                 <Item name='company' label='Company'>
@@ -124,9 +154,7 @@ const GatheringForm = () => {
                 <Item name='title' label='Job title'>
                   <Input />
                 </Item>
-                <div className='blackBtn' onClick={() => submit()}>
-                  Submit your endorsements
-                </div>
+                <div className='blackBtn'>Submit your endorsements</div>
               </div>
             )}
           </Form>

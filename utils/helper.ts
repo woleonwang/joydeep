@@ -39,3 +39,6 @@ export const getDefaultSignUrl = (): string => {
 };
 
 export const RecommendTokenKey = 'recommend_token';
+
+export const isRespSucceed = (resp: { message: Record<string, any> }) =>
+  resp && resp.message && !resp.message.err_code;
