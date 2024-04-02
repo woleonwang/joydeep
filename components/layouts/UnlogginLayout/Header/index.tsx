@@ -103,17 +103,50 @@ const Header = () => {
           })}
         </div>
         <div>
-          <Link href='/recruiters/sign_up'>
-            <Button type='primary' className={styles.signUpBtn}>
-              Start hiring now →
-            </Button>
-          </Link>
-
-          <Link href='/contact'>
-            <Button type='default' className={styles.logInBtn}>
-              Contact us →
-            </Button>
-          </Link>
+          <Dropdown
+            overlay={
+              <Menu
+                items={[
+                  {
+                    key: 'recruiter',
+                    label: (
+                      <Link href='/recruiters/sign_up'>Recruiter</Link>
+                    ),
+                  },
+                  {
+                    key: 'partner',
+                    label: (
+                      <a href='/partners/sign_up' className={styles.disabled}>Partner</a>
+                    ),
+                  },
+                ]}
+              />
+            }
+          >
+            <Button type='primary' className={styles.signUpBtn}>Sign up →</Button>
+          </Dropdown>
+          <Dropdown
+            overlay={
+              <Menu
+                items={[
+                  {
+                    key: 'recruiter',
+                    label: (
+                      <Link href='/recruiters/sign_in'>Recruiter</Link>
+                    ),
+                  },
+                  {
+                    key: 'partner',
+                    label: (
+                      <a href='/partners/sign_in' className={styles.disabled}>Partner</a>
+                    ),
+                  },
+                ]}
+              />
+            }
+          >
+            <Button type='default' className={styles.logInBtn}>Sign in →</Button>
+          </Dropdown>
         </div>
       </div>
     </div>
