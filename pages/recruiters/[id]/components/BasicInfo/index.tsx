@@ -18,9 +18,6 @@ const BasicInfo = (props: IProps) => {
             <div className={styles.name}>
               {basicInfo.firstName + ' ' + basicInfo.lastName}
             </div>
-            <Button type='primary' className={styles.btn}>
-              Get in touch
-            </Button>
           </div>
           <div className={styles.selfIntro}>{basicInfo.description}</div>
         </div>
@@ -44,6 +41,11 @@ const BasicInfo = (props: IProps) => {
                 {basicInfo.experiences} Years
               </div>
             </div>
+          </div>
+          <div className={styles.row}>
+            <Button type='primary' className={styles.btn}>
+              Get in touch
+            </Button>
           </div>
         </div>
       </div>

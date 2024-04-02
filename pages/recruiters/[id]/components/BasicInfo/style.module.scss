@@ -30,14 +30,6 @@
       @include fs64b;
     }
 
-    .btn {
-      width: 164px;
-      height: 54px;
-      margin-left: auto;
-      border-radius: 27px;
-      @include fs16b;
-    }
-
     .selfIntro {
       margin-top: -65px;
       @include fs24;
@@ -69,6 +61,14 @@
     .content {
       margin-top: 6px;
       @include fs24;
+    }
+
+    .btn {
+      width: 164px;
+      height: 54px;
+      border-radius: 27px;
+      margin: auto;
+      @include fs16b;
     }
   }
 
