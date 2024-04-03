@@ -11,6 +11,7 @@ import request from 'utils/request';
 import { IRecriuterProfileApi } from 'utils/type';
 import styles from './style.module.scss';
 import TextAreaWrapper from 'components/TextAreaWrapper';
+import ImgCrop from 'antd-img-crop';
 
 const { useForm, Item } = Form;
 
@@ -96,25 +97,27 @@ const Basic = (props: IProps) => {
           );
 
           return (
-            <Upload
-              action='/api/file/upload'
-              showUploadList={false}
-              onChange={(info) => {
-                if (info.file.status === 'done') {
-                  const fileId = info.file.response?.message?.file_id;
-                  if (fileId) {
-                    form.setFieldsValue({
-                      photo: fileId,
-                    });
+            <ImgCrop>
+              <Upload
+                action='/api/file/upload'
+                showUploadList={false}
+                onChange={(info) => {
+                  if (info.file.status === 'done') {
+                    const fileId = info.file.response?.message?.file_id;
+                    if (fileId) {
+                      form.setFieldsValue({
+                        photo: fileId,
+                      });
+                    }
+                    message.success('Avatar upload succeed');
+                  } else if (info.file.status === 'error') {
+                    message.error('Avatar upload failed');
                   }
-                  message.success('Avatar upload succeed');
-                } else if (info.file.status === 'error') {
-                  message.error('Avatar upload failed');
-                }
-              }}
-            >
-              {content}
-            </Upload>
+                }}
+              >
+                {content}
+              </Upload>
+            </ImgCrop>
           );
         }}
       </Item>
