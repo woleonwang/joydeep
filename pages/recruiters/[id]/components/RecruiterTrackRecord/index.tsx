@@ -40,6 +40,7 @@ const RecruiterTrackRecord = (props: IProps) => {
               <div key={index} className={styles.item}>
                 <div className={styles.date}>{item.timestamp}</div>
                 <div className={styles.desc}>{item.description}</div>
+                <div>{item.company}</div>
                 {item.isVerified && (
                   <div className={styles.placementHint}>Verified By Landd</div>
                 )}

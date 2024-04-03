@@ -92,6 +92,7 @@ const ProfilePrevew = () => {
           placements: placements.map((item) => ({
             timestamp: moment(item.created_at).format('YYYY-MM-SS'),
             description: item.position,
+            company: item.company,
             isVerified: true,
           })),
         },

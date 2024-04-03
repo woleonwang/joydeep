@@ -79,6 +79,7 @@ interface ITrackRecords {
   placements: {
     timestamp: string;
     description: string;
+    company: string;
     isVerified: boolean;
   }[];
 }
