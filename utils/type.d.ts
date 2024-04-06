@@ -110,7 +110,8 @@ interface IEndorsementItem {
 interface IPublications {
   publications: {
     timestamp: string;
-    content: string;
+    title: string;
+    link: string;
   }[];
   comments: IComment[];
 }

@@ -22,7 +22,14 @@ const Publications = (props: IProps) => {
         {publications.publications.map((item, index) => (
           <div key={index} className={styles.item}>
             <div className={styles.date}>{item.timestamp}</div>
-            <div className={styles.desc}>{item.content}</div>
+            <a
+              className={styles.desc}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {item.title}
+            </a>
           </div>
         ))}
       </div>
@@ -33,7 +40,7 @@ const Publications = (props: IProps) => {
             {items.map((item, index) => (
               <div key={index} className={styles.commentsItem}>
                 <div className={styles.header}>
-                  <img src={item.avatar} alt='' className={styles.avatar} />
+                  <img src={item.avatar} alt="" className={styles.avatar} />
                   <div className={styles.info}>
                     <div className={styles.firstRow}>
                       <div className={styles.name}>{item.name}</div>

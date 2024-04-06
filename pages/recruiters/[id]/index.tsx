@@ -48,7 +48,7 @@ const ProfilePrevew = () => {
         placeholder: {
           id: `${router.query.id}`,
         },
-      }
+      },
     );
 
     if (message) {
@@ -81,7 +81,8 @@ const ProfilePrevew = () => {
         publications: {
           publications: publications.map((item) => ({
             timestamp: moment(item.created_at).format('YYYY-MM-SS'),
-            content: item.link,
+            title: item.title,
+            link: item.link,
           })),
           comments: mockData.publications.comments,
         },
@@ -116,19 +117,19 @@ const ProfilePrevew = () => {
       <div className={styles.header}>
         <div className={styles.inner}>
           <div>
-            <Link href='/'>
+            <Link href="/">
               <a>
                 <Image
-                  src='/logo.svg'
+                  src="/logo.svg"
                   width={122}
                   height={36}
-                  alt='logo'
+                  alt="logo"
                 ></Image>
               </a>
             </Link>
           </div>
           <div>
-            <Button type='default' className={styles.logInBtn}>
+            <Button type="default" className={styles.logInBtn}>
               Recruiter Directory
             </Button>
           </div>
@@ -138,7 +139,7 @@ const ProfilePrevew = () => {
         <BasicInfo basicInfo={basicInfo} />
         <RecruiterTrackRecord trackRecords={trackRecords} />
         <CandidateResources candidates={candidates} />
-        <Endorsements endorsements={endorsements} currentName='Eric' />
+        <Endorsements endorsements={endorsements} currentName="Eric" />
         <Publications publications={publications} />
         <FeaturedJobs jobs={featuredJobs} />
       </div>
