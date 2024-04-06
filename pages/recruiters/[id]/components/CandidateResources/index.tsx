@@ -15,7 +15,7 @@ const CandidateResources = (props: IProps) => {
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
         <div className={styles.title}>My Candidate Resources</div>
-        <div className={styles.hint}>Verified by Landd</div>
+        {/* <div className={styles.hint}>Verified by Landd</div> */}
       </div>
       <div className={styles.main}>
         <div className={styles.left}>
@@ -29,8 +29,8 @@ const CandidateResources = (props: IProps) => {
         <div className={styles.right}>
           <div className={styles.rightTitleWrapper}>
             <img
-              src='/recruiter/profile/track-icon.png'
-              alt='icon'
+              src="/recruiter/profile/track-icon.png"
+              alt="icon"
               className={styles.rightTitleIcon}
             />
             <div className={styles.rightTitle}>Candidates Job Title</div>

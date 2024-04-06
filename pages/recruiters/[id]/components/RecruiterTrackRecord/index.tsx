@@ -12,7 +12,7 @@ const RecruiterTrackRecord = (props: IProps) => {
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
         <div className={styles.title}>My Recruitment Track Record</div>
-        <div className={styles.hint}>Verified by Landd</div>
+        {/* <div className={styles.hint}>Verified by Landd</div> */}
       </div>
       <div className={styles.main}>
         <div className={styles.summary}>
@@ -41,9 +41,9 @@ const RecruiterTrackRecord = (props: IProps) => {
                 <div className={styles.date}>{item.timestamp}</div>
                 <div className={styles.desc}>{item.description}</div>
                 <div>{item.company}</div>
-                {item.isVerified && (
+                {/* {item.isVerified && (
                   <div className={styles.placementHint}>Verified By Landd</div>
-                )}
+                )} */}
               </div>
             ))}
           </div>
