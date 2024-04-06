@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button } from 'antd';
-import { ClockCircleOutlined, BankOutlined } from '@ant-design/icons';
-import { IBasicInfo } from 'utils/type';
-import styles from './style.module.scss';
+import { Button, Typography } from "antd";
+import { ClockCircleOutlined, BankOutlined } from "@ant-design/icons";
+import { IBasicInfo } from "utils/type";
+import styles from "./style.module.scss";
 
 interface IProps {
   basicInfo: IBasicInfo;
@@ -14,12 +14,17 @@ const BasicInfo = (props: IProps) => {
       <div className={styles.summary}>
         <div className={styles.left}>
           <div className={styles.head}>
-            <img className={styles.avatar} src={basicInfo.avatar} alt='' />
+            <img className={styles.avatar} src={basicInfo.avatar} alt="" />
             <div className={styles.name}>
-              {basicInfo.firstName + ' ' + basicInfo.lastName}
+              {basicInfo.firstName + " " + basicInfo.lastName}
             </div>
           </div>
-          <div className={styles.selfIntro}>{basicInfo.description}</div>
+          <Typography.Paragraph
+            className={styles.selfIntro}
+            ellipsis={{ rows: 5, expandable: true, symbol: "read more" }}
+          >
+            {basicInfo.description}
+          </Typography.Paragraph>
         </div>
         <div className={styles.right}>
           <div className={styles.row}>
@@ -43,7 +48,7 @@ const BasicInfo = (props: IProps) => {
             </div>
           </div>
           <div className={styles.row}>
-            <Button type='primary' className={styles.btn}>
+            <Button type="primary" className={styles.btn}>
               Get in touch
             </Button>
           </div>

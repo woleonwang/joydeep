@@ -31,6 +31,8 @@
     "@types/react-copy-to-clipboard": "^5.0.2",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.2.5",
     "typescript": "4.5.5"
   }
 }
