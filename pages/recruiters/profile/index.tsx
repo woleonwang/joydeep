@@ -58,7 +58,7 @@ const Profile = () => {
         placeholder: {
           id: `${userInfo.userId}`,
         },
-      }
+      },
     );
 
     if (message) {
@@ -69,28 +69,28 @@ const Profile = () => {
   const profileLink = `${window.location.origin}/recruiters/${userInfo.userId}`;
 
   return (
-    <RecruiterSidebarLayout activeMenu='Profile'>
+    <RecruiterSidebarLayout activeMenu="profile">
       <div className={styles.profileWrapper}>
         <div className={styles.main}>
           <Tabs
-            defaultActiveKey='basic'
+            defaultActiveKey="basic"
             tabBarStyle={{ color: 'rgba(0, 0, 0, 0.4)' }}
             items={items}
           />
         </div>
         <div className={styles.buttonGroup}>
           <div>
-            <div className='blackBtn' onClick={() => window.open(profileLink)}>
+            <div className="blackBtn" onClick={() => window.open(profileLink)}>
               Preview my profile page
             </div>
           </div>
           <div style={{ marginTop: 15 }}>
             <ReactCopyToClipboard
-              key='copy'
+              key="copy"
               text={profileLink}
               onCopy={() => message.success('Copied to clicpboard')}
             >
-              <div className='blackBtn'>Copy page link</div>
+              <div className="blackBtn">Copy page link</div>
             </ReactCopyToClipboard>
           </div>
         </div>

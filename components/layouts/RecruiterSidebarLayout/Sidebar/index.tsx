@@ -19,7 +19,7 @@ import request from 'utils/request';
 import router from 'next/router';
 
 interface IProps {
-  activeMenu: string;
+  activeMenu: 'profile' | 'endorsements';
 }
 
 const Sidebar = (props: IProps) => {
@@ -44,7 +44,7 @@ const Sidebar = (props: IProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Image src='/logo.svg' width={121} height={38} alt='logo' />
+        <Image src="/logo.svg" width={121} height={38} alt="logo" />
         <div className={styles.tag}>Recruiter</div>
       </div>
       <div className={styles.body}>
@@ -57,7 +57,7 @@ const Sidebar = (props: IProps) => {
                     {
                       [styles.selected]: item.key === activeMenu,
                     },
-                    styles.menu
+                    styles.menu,
                   )}
                 >
                   {item.icon} {item.label}
@@ -69,7 +69,7 @@ const Sidebar = (props: IProps) => {
       </div>
       <div className={styles.footer}>
         <Dropdown
-          placement='top'
+          placement="top"
           overlay={
             <Menu
               style={{ width: 150 }}
@@ -91,7 +91,7 @@ const Sidebar = (props: IProps) => {
           }
         >
           <div className={styles.menuWrapper}>
-            <img src={userInfo.avatar} alt='' />
+            <img src={userInfo.avatar} alt="" />
             <div className={styles.nameWrapper}>{userInfo.userName}</div>
           </div>
         </Dropdown>

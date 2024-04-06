@@ -1,7 +1,7 @@
 import RecruiterLogginLayout from 'components/layouts/RecruiterLogginLayout';
 import RecruiterSidebarLayout from 'components/layouts/RecruiterSidebarLayout';
-import { useState, useEffect } from 'react';
-import { Form, Tabs, TabsProps } from 'antd';
+import { useEffect } from 'react';
+import { Tabs, TabsProps } from 'antd';
 import request from 'utils/request';
 import context from 'context/context';
 import styles from './style.module.scss';
@@ -43,10 +43,10 @@ const Endorsements = () => {
   };
 
   return (
-    <RecruiterSidebarLayout activeMenu='Endorsements'>
+    <RecruiterSidebarLayout activeMenu="endorsements">
       <div className={styles.main}>
         <Tabs
-          defaultActiveKey='published'
+          defaultActiveKey="published"
           tabBarStyle={{ color: 'rgba(0, 0, 0, 0.4)' }}
           items={items}
         />
