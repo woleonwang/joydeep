@@ -33,6 +33,7 @@
     }
 
     .selfIntro {
+      white-space: preserve;
       margin-top: -65px;
       @include fs24;
     }

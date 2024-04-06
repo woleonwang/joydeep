@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Typography } from "antd";
-import { ClockCircleOutlined, BankOutlined } from "@ant-design/icons";
-import { IBasicInfo } from "utils/type";
-import styles from "./style.module.scss";
+import { Button, Typography } from 'antd';
+import { ClockCircleOutlined, BankOutlined } from '@ant-design/icons';
+import { IBasicInfo } from 'utils/type';
+import styles from './style.module.scss';
 
 interface IProps {
   basicInfo: IBasicInfo;
@@ -16,12 +16,12 @@ const BasicInfo = (props: IProps) => {
           <div className={styles.head}>
             <img className={styles.avatar} src={basicInfo.avatar} alt="" />
             <div className={styles.name}>
-              {basicInfo.firstName + " " + basicInfo.lastName}
+              {basicInfo.firstName + ' ' + basicInfo.lastName}
             </div>
           </div>
           <Typography.Paragraph
             className={styles.selfIntro}
-            ellipsis={{ rows: 5, expandable: true, symbol: "read more" }}
+            ellipsis={{ rows: 5, expandable: true, symbol: 'read more' }}
           >
             {basicInfo.description}
           </Typography.Paragraph>
